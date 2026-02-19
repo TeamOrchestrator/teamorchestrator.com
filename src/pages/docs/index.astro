@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getDocsSections, getSortedDocs } from '../../lib/content';
+
+const docs = await getSortedDocs();
+const sections = getDocsSections(docs);
+---
+
+<Layout title="Team Orchestrator Docs" description="Documentation for Team Orchestrator.">
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">Documentation</p>
+      <h1>Docs and guides</h1>
+      <p class="lead">Technical reference and onboarding material for Team Orchestrator.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container docs-sections">
+      {sections.map((section) => (
+        <section>
+          <h2>{section.section}</h2>
+          <div class="docs-grid">
+            {section.docs.map((doc) => (
+              <article class="card">
+                <h3><a href={`/docs/${doc.slug}/`}>{doc.data.title}</a></h3>
+                <p>{doc.data.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Team Orchestrator',
+	description = 'Mission Control for your digital workforce.',
+} = Astro.props;
+const pathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container header-inner">
+				<a class="brand" href="/">Team Orchestrator</a>
+				<nav aria-label="Primary navigation">
+					<ul class="nav-list">
+						<li><a class={pathname === '/' ? 'active' : undefined} href="/">Platform</a></li>
+						<li><a class={pathname.startsWith('/blog') ? 'active' : undefined} href="/blog">Blog</a></li>
+						<li><a class={pathname.startsWith('/docs') ? 'active' : undefined} href="/docs">Docs</a></li>
+						<li><a href="mailto:hello@teamorchestrator.com">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<footer class="site-footer">
+			<div class="container footer-inner">
+				<p>© {new Date().getFullYear()} Team Orchestrator</p>
+				<p>Strategy powered by Athena. Results delivered by Team Orchestrator.</p>
+			</div>
+		</footer>
+	</body>
+</html>

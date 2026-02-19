@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { getPublishedPosts, slugifyTag } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const postYear = String(post.data.pubDate.getFullYear());
+---
+
+<Layout title={`${post.data.title} | Team Orchestrator Blog`} description={post.data.description}>
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">Blog</p>
+      <h1>{post.data.title}</h1>
+      <p class="meta">
+        {post.data.pubDate.toLocaleDateString()} · {post.data.author}
+      </p>
+      <p class="meta">
+        {post.data.tags.map((tag, index) => (
+          <>
+            {index > 0 && ' · '}
+            <a href={`/blog/tags/${slugifyTag(tag)}/`}>{tag}</a>
+          </>
+        ))}
+      </p>
+      <p class="meta"><a href={`/blog/archive/${postYear}/`}>More from {postYear}</a></p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <article>
+        <Content />
+      </article>
+    </div>
+  </section>
+</Layout>
