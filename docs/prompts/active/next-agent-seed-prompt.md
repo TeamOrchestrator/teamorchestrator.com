@@ -11,18 +11,18 @@ You are beginning a new development cycle in TeamOrchestrator.com.
 
 ## Current Context
 
-The website foundation is in place (Astro, homepage, blog, docs routes, tags/archive/pagination scaffolding). Story 02.01 is complete and established a documented ProjectAthena docs ingestion strategy with a recommended manifest-driven sync model.
+The website foundation is in place (Astro, homepage, blog, docs routes). A UI/UX evaluation has identified the need for a more robust design system and a "Mission Control" aesthetic to better appeal to engineering leaders. Story 01.03 initiates this by migrating to Tailwind CSS.
 
-## Task: Story 02.02 — Implement Docs Search Index Output
+## Task: Story 01.03 — Adopt Tailwind CSS for Design Consistency
 
-Produce a search-ready docs index artifact to support future docs search UX.
+Replace the monolithic `global.css` with Tailwind CSS to enable a scalable, component-driven design system.
 
-1. Define JSON index schema for docs pages.
-2. Generate the index artifact during build.
-3. Include title, description, headings, and route path metadata.
-4. Document downstream consumption guidance for future UI.
+1. Install and configure Tailwind CSS in the Astro project.
+2. Define a custom theme in `tailwind.config.mjs` using brand colors and a "Mission Control" palette.
+3. Migrate layout and typography styles from `global.css` to Tailwind utility classes.
+4. Ensure visual consistency across Home, Blog, and Docs pages.
 
-**Reference:** `docs/backlog/active/02.02-implement-docs-search-index-output.md`
+**Reference:** `docs/backlog/active/01.03-adopt-tailwind-css-for-design-consistency.md`
 
 ## Constraints
 
