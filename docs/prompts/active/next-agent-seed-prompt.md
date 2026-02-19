@@ -11,18 +11,18 @@ You are beginning a new development cycle in TeamOrchestrator.com.
 
 ## Current Context
 
-The website foundation is in place (Astro, homepage, blog, docs routes, tags/archive/pagination scaffolding). Story 01.01 is complete and established docs-as-code lifecycle, ownership, and cycle-checklist baselines.
+The website foundation is in place (Astro, homepage, blog, docs routes, tags/archive/pagination scaffolding). Story 02.01 is complete and established a documented ProjectAthena docs ingestion strategy with a recommended manifest-driven sync model.
 
-## Task: Story 01.02 — Define Content Templates and QA Checklist
+## Task: Story 02.02 — Implement Docs Search Index Output
 
-Implement standardized content templates and QA guidance for docs and blog publishing quality.
+Produce a search-ready docs index artifact to support future docs search UX.
 
-1. Add template frontmatter examples for docs and blog content.
-2. Define required metadata fields and naming conventions.
-3. Add pre-publish QA checks (links, headings, summaries, route validation).
-4. Add guidance for release notes and mission-update posts.
+1. Define JSON index schema for docs pages.
+2. Generate the index artifact during build.
+3. Include title, description, headings, and route path metadata.
+4. Document downstream consumption guidance for future UI.
 
-**Reference:** `docs/backlog/active/01.02-define-content-templates-and-qa-checklist.md`
+**Reference:** `docs/backlog/active/02.02-implement-docs-search-index-output.md`
 
 ## Constraints
 

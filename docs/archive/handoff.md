@@ -1,3 +1,55 @@
+# Handoff Snapshot (2026-02-19, Story 02.01 Complete)
+
+## Current State
+
+- Website stack: Astro (static output).
+- Story `02.01` is complete with a documented ingestion strategy for `projectathena/docs`.
+- Follow-up implementation tasks for manifest and sync automation are now added to active backlog.
+
+## What Changed In This Slice
+
+1. Added strategy artifact: `docs/research/active/projectathena-docs-ingestion-strategy.md`.
+2. Defined source-of-truth ownership by documentation domain.
+3. Compared sync options (manual import, scripted copy with manifest, generated references) with trade-offs.
+4. Recommended default model: scripted copy with manifest, plus selective link-out.
+5. Defined versioning/archive behavior and stale/conflict risk controls.
+6. Added follow-up stories `02.03` and `02.04` to active backlog.
+7. Completed backlog movement for Story `02.01`.
+
+## Risks
+
+- Ingestion policy is documented but not yet enforced by implementation/automation.
+- Without manifest and sync guardrails (Stories `02.03`/`02.04`), drift risk remains operationally present.
+
+## Follow-Ups / Next Slice
+
+- Execute Story `02.02` from `docs/backlog/active/02.02-implement-docs-search-index-output.md`.
+
+# Handoff Snapshot (2026-02-19, Story 01.02 Complete)
+
+## Current State
+
+- Website stack: Astro (static output).
+- Story `01.02` content-operations standards are now established.
+- Contributors now have canonical templates and QA checks for docs/blog publishing quality.
+
+## What Changed In This Slice
+
+1. Added frontmatter templates and metadata/naming conventions in `docs/developer/docs-as-code-workflow.md`.
+2. Expanded `docs/developer/cycle-checklist.md` with pre-publish quality checks (headings, links, summaries, route validation).
+3. Added published docs guide at `/docs/content-templates-and-qa/` backed by `src/content/docs/content-templates-and-qa.md`.
+4. Updated docs index canonical operations links to include the new templates/QA page.
+5. Seeded blog metadata consistency by explicitly adding `draft: false` to `src/content/blog/introducing-team-orchestrator.md`.
+6. Completed backlog movement for Story `01.02`.
+
+## Risks
+
+- QA checks are documented but still manually enforced (no CI lint automation yet).
+
+## Follow-Ups / Next Slice
+
+- Execute Story `02.01` from `docs/backlog/active/02.01-wire-projectathena-reference-docs-ingestion-strategy.md`.
+
 # Handoff Snapshot (2026-02-19, Story 01.01 Complete)
 
 ## Current State
