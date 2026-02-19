@@ -1,6 +1,7 @@
 ---
 title: Platform Overview
 description: Product positioning, reliability model, and current development stage.
+slug: platform-overview
 section: Foundation
 sectionOrder: 1
 order: 2
@@ -8,7 +9,7 @@ order: 2
 
 ## Positioning
 
-Team Orchestrator is the **Kubernetes of AI Agents**: a control plane that turns experimental prompting into reliable operational workflows.
+Team Orchestrator is a **control plane for AI teams** that turns experimental prompting into reliable operational workflows.
 
 ## Why teams choose it
 

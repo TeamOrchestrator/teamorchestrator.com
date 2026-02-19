@@ -1,0 +1,20 @@
+---
+title: Cycle Checklist
+description: End-of-cycle checklist for documentation publishing and handoff discipline.
+section: Operations
+sectionOrder: 2
+order: 2
+---
+
+Use this checklist before every handoff.
+
+## Checklist
+
+- [ ] Story scope is complete and acceptance criteria are met.
+- [ ] Lifecycle state for changed docs/blog content is explicit.
+- [ ] Build passes with `npm run build`.
+- [ ] Existing URLs remain stable.
+- [ ] Handoff snapshot updated in `docs/archive/handoff.md`.
+- [ ] Completed stories moved from `docs/backlog/active/` to `docs/backlog/completed/`.
+- [ ] Active backlog ordering updated for the next cycle.
+- [ ] Seed prompt refreshed for the next cycle.
