@@ -1,6 +1,6 @@
 # Active Backlog Sprint Plan (2026-02-19)
 
-This sprint advances implementation after Story 02.01 strategy completion.
+This sprint now pivots from design-system implementation back to documentation productization.
 
 ## Sprint Sequence
 
@@ -9,20 +9,15 @@ This sprint advances implementation after Story 02.01 strategy completion.
 2. **Story 02.03: Establish Docs Ingestion Manifest and Ownership Map**
 3. **Story 02.04: Implement ProjectAthena Docs Sync Script and Guardrails**
 
-### Phase 2: Design System & UX Modernization
-4. **Story 01.03: Adopt Tailwind CSS for Design Consistency**
-5. **Story 01.04: Implement "Mission Control" Design System & Layout Components**
-6. **Story 01.05: Create Interactive Terminal Demo for Homepage**
-
-### Phase 3: Publishing & Growth Infrastructure
-7. **Story 03.01: Add SEO and Social Metadata Baseline**
-8. **Story 03.02: Add Website Analytics Event Model**
+### Phase 2: Publishing & Growth Infrastructure
+4. **Story 03.01: Add SEO and Social Metadata Baseline**
+5. **Story 03.02: Add Website Analytics Event Model**
 
 ## Strategic Risks
 
-- Content drift between `projectathena` docs and website docs if ingestion/update policy is unclear.
-- Search index implementation may require schema decisions that impact future UI/API compatibility.
-- Search/index quality may degrade if metadata standards are not enforced.
+- Search index shape decisions in Story `02.02` can constrain future docs search UI and ranking capabilities.
+- Docs ingestion ownership drift remains a risk until manifest/sync stories are implemented.
+- Build artifact determinism for generated docs metadata must be maintained to avoid CI noise.
 
 ## Iteration Exit Checklist
 

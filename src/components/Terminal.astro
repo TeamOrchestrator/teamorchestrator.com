@@ -1,0 +1,89 @@
+---
+import Card from './Card.astro';
+
+const lines = [
+  '$ athena run "Deploy new feature branch"',
+  '[Athena] Objective interpreted: deploy feature branch with managed autonomy.',
+  '[Athena] Specialist assignment: Product Strategist -> Staff Engineer -> QA Lead.',
+  '[Relay] Context compounding complete. Seed package delivered to Staff Engineer.',
+  '[Execution] Build green. Integration checks passed. Staging deploy started.',
+  '[Evidence] Bundle archived at .athena/evidence/deploy-feature-branch-2026-02-19.json',
+  '[Mission] Status: SUCCESS. Awaiting Flight Director confirmation.',
+];
+---
+
+<Card
+  as="aside"
+  elevated={true}
+  class="terminal-shell"
+  aria-label="Interactive terminal demo showing a mission sequence"
+>
+  <div class="terminal-header">
+    <div class="terminal-lights" aria-hidden="true">
+      <span class="terminal-light terminal-light-red"></span>
+      <span class="terminal-light terminal-light-amber"></span>
+      <span class="terminal-light terminal-light-green"></span>
+    </div>
+    <p class="terminal-title tech-label">Mission Simulation</p>
+    <p class="terminal-state" data-terminal-state>Running</p>
+  </div>
+  <pre class="terminal-viewport" tabindex="0"><code data-terminal-log></code><span aria-hidden="true" class="terminal-cursor"></span></pre>
+  <p class="terminal-assistive sr-only" aria-live="polite" data-terminal-live></p>
+  <p class="terminal-hint">Selectable output. Press Tab to focus and copy command logs.</p>
+</Card>
+
+<script is:inline define:vars={{ lines }}>
+  (() => {
+    const root = document.currentScript?.previousElementSibling;
+    if (!(root instanceof HTMLElement)) return;
+    const logNode = root.querySelector('[data-terminal-log]');
+    const stateNode = root.querySelector('[data-terminal-state]');
+    const liveNode = root.querySelector('[data-terminal-live]');
+    const cursorNode = root.querySelector('.terminal-cursor');
+    if (!logNode || !stateNode || !liveNode || !cursorNode) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const missionLines = lines;
+    const fullOutput = `${missionLines.join('\n')}\n`;
+
+    const finalize = () => {
+      stateNode.textContent = 'Mission Complete';
+      stateNode.classList.add('is-complete');
+      liveNode.textContent = 'Mission simulation complete.';
+      cursorNode.classList.add('is-hidden');
+    };
+
+    if (reduceMotion) {
+      logNode.textContent = fullOutput;
+      finalize();
+      return;
+    }
+
+    let lineIndex = 0;
+    let charIndex = 0;
+
+    const tick = () => {
+      if (lineIndex >= missionLines.length) {
+        finalize();
+        return;
+      }
+
+      const line = missionLines[lineIndex];
+      logNode.textContent += line[charIndex];
+      charIndex += 1;
+
+      if (charIndex >= line.length) {
+        logNode.textContent += '\n';
+        lineIndex += 1;
+        charIndex = 0;
+        liveNode.textContent = `Rendered ${lineIndex} of ${missionLines.length} mission log lines.`;
+        window.setTimeout(tick, 320);
+        return;
+      }
+
+      window.setTimeout(tick, 20);
+    };
+
+    window.setTimeout(tick, 180);
+  })();
+</script>

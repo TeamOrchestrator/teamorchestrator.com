@@ -1,4 +1,6 @@
 ---
+import Button from '../../../components/Button.astro';
+import Card from '../../../components/Card.astro';
 import Layout from '../../../layouts/Layout.astro';
 import { getArchiveSummary, getPostsByYear, getPublishedPosts } from '../../../lib/content';
 
@@ -28,15 +30,15 @@ const yearPosts = getPostsByYear(posts, year ?? '');
   <section class="section">
     <div class="container post-grid">
       {yearPosts.map((post) => (
-        <article class="card">
+        <Card>
           <h2><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h2>
           <p>{post.data.description}</p>
           <p class="meta">{post.data.pubDate.toLocaleDateString()}</p>
-        </article>
+        </Card>
       ))}
     </div>
     <div class="container">
-      <p><a href="/blog/archive">← Back to archive</a></p>
+      <p><Button href="/blog/archive" variant="secondary">Back to archive</Button></p>
     </div>
   </section>
 </Layout>

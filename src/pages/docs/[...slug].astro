@@ -1,4 +1,5 @@
 ---
+import Card from '../../components/Card.astro';
 import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { getDocsSections, getSortedDocs } from '../../lib/content';
@@ -34,7 +35,7 @@ const sections = getDocsSections(allDocs);
 
   <section class="content">
     <div class="container docs-layout">
-      <aside class="docs-sidebar card">
+      <Card as="aside" class="docs-sidebar">
         <h2>Documentation</h2>
         {sections.map((section) => (
           <section>
@@ -67,7 +68,7 @@ const sections = getDocsSections(allDocs);
             </ul>
           </section>
         )}
-      </aside>
+      </Card>
       <article>
         <Content />
       </article>

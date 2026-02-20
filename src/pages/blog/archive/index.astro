@@ -1,4 +1,5 @@
 ---
+import Card from '../../../components/Card.astro';
 import Layout from '../../../layouts/Layout.astro';
 import { getArchiveSummary, getPublishedPosts } from '../../../lib/content';
 
@@ -17,14 +18,14 @@ const archive = getArchiveSummary(posts);
 
   <section class="section">
     <div class="container">
-      <ul class="link-list card">
+      <Card as="ul" class="link-list">
         {archive.map((entry) => (
           <li>
             <a href={`/blog/archive/${entry.year}/`}>{entry.year}</a>
             <span class="meta"> ({entry.count})</span>
           </li>
         ))}
-      </ul>
+      </Card>
     </div>
   </section>
 </Layout>

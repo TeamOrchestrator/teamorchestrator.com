@@ -1,4 +1,5 @@
 ---
+import Button from '../../components/Button.astro';
 import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { getPublishedPosts, slugifyTag } from '../../lib/content';
@@ -37,7 +38,7 @@ const postYear = String(post.data.pubDate.getFullYear());
           </>
         ))}
       </p>
-      <p class="meta"><a href={`/blog/archive/${postYear}/`}>More from {postYear}</a></p>
+      <p><Button href={`/blog/archive/${postYear}/`} variant="secondary">More from {postYear}</Button></p>
     </div>
   </section>
 

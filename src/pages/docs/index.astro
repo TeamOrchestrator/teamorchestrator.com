@@ -1,4 +1,5 @@
 ---
+import Card from '../../components/Card.astro';
 import Layout from '../../layouts/Layout.astro';
 import { getDocsSections, getSortedDocs } from '../../lib/content';
 
@@ -29,10 +30,10 @@ const sections = getDocsSections(docs);
           <h2>{section.section}</h2>
           <div class="docs-grid">
             {section.docs.map((doc) => (
-              <article class="card">
+              <Card>
                 <h3><a href={`/docs/${doc.slug}/`}>{doc.data.title}</a></h3>
                 <p>{doc.data.description}</p>
-              </article>
+              </Card>
             ))}
           </div>
         </section>

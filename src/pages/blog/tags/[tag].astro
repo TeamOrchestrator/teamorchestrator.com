@@ -1,4 +1,6 @@
 ---
+import Button from '../../../components/Button.astro';
+import Card from '../../../components/Card.astro';
 import Layout from '../../../layouts/Layout.astro';
 import { getPostsByTagSlug, getPublishedPosts, getTagSummary } from '../../../lib/content';
 
@@ -30,15 +32,15 @@ const tagPosts = getPostsByTagSlug(posts, tag ?? '');
   <section class="section">
     <div class="container post-grid">
       {tagPosts.map((post) => (
-        <article class="card">
+        <Card>
           <h2><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h2>
           <p>{post.data.description}</p>
           <p class="meta">{post.data.pubDate.toLocaleDateString()}</p>
-        </article>
+        </Card>
       ))}
     </div>
     <div class="container">
-      <p><a href="/blog/tags">← Back to all tags</a></p>
+      <p><Button href="/blog/tags" variant="secondary">Back to all tags</Button></p>
     </div>
   </section>
 </Layout>

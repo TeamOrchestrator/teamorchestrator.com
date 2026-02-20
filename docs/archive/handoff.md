@@ -1,3 +1,96 @@
+# Handoff Snapshot (2026-02-19, Story 01.05 Complete)
+
+## Current State
+
+- Website stack: Astro + Tailwind with Mission Control styling and reusable UI components.
+- Story `01.05` is complete with an interactive homepage terminal demo that illustrates managed-autonomy mission flow.
+- Core URLs remain stable and build output remains deterministic.
+
+## What Changed In This Slice
+
+1. Added `src/components/Terminal.astro` using Astro + vanilla JS for progressive terminal log playback.
+2. Implemented representative mission sequence including:
+   - `athena run "Deploy new feature branch"`
+   - specialist assignment,
+   - mission relay/context compounding,
+   - final success status with evidence bundle path.
+3. Integrated terminal into homepage hero (`src/pages/index.astro`) as the primary right-column demo surface.
+4. Extended `src/styles/global.css` with terminal-specific styling:
+   - responsive terminal shell and viewport,
+   - selectable output text,
+   - animated cursor,
+   - reduced-motion fallback behavior,
+   - screen-reader utility class and live update support.
+5. Validated end-to-end with `npm run build` (pass).
+6. Completed backlog movement for Story `01.05`.
+
+## Risks
+
+- Inline script timing is intentionally lightweight, but future enhancements should avoid adding heavy client-side state/hydration in the hero.
+- Terminal content is static demo text; if made dynamic later, ensure output remains safe and deterministic during static build.
+
+## Follow-Ups / Next Slice
+
+- Execute Story `02.02` from `docs/backlog/active/02.02-implement-docs-search-index-output.md`.
+
+# Handoff Snapshot (2026-02-19, Story 01.04 Complete)
+
+## Current State
+
+- Website stack: Astro (static output) with Tailwind CSS and a reusable Mission Control component baseline.
+- Story `01.04` is complete with shared `Card` and `Button` components adopted across Home, Blog, and Docs surfaces.
+- Core routes and URLs remain stable.
+
+## What Changed In This Slice
+
+1. Added reusable UI components: `src/components/Card.astro` and `src/components/Button.astro`.
+2. Refactored `src/layouts/Layout.astro` to strengthen Mission Control framing and add explicit monospace-capable brand metadata treatment.
+3. Enhanced `src/styles/global.css` with:
+   - glassmorphism refinements for header/cards,
+   - JetBrains Mono usage for technical labels and code surfaces,
+   - subtle blueprint/grid-style background accents.
+4. Migrated key templates to component-based composition across:
+   - Homepage: `src/pages/index.astro`
+   - Blog routes: index, pagination, tag, archive, and post views
+   - Docs routes: index and doc detail view
+5. Validated via `npm run build` (pass).
+6. Completed backlog movement for Story `01.04`.
+
+## Risks
+
+- Added visual treatments (blur, gradients, grid overlays) should be visually QA'd in `npm run dev` for readability and contrast at multiple viewport sizes.
+- Homepage is now ready for an interactive terminal, but hydration/animation strategy in Story `01.05` must stay within performance budgets.
+
+## Follow-Ups / Next Slice
+
+- Execute Story `01.05` from `docs/backlog/active/01.05-create-interactive-terminal-demo-for-homepage.md`.
+
+# Handoff Snapshot (2026-02-19, Story 01.03 Complete)
+
+## Current State
+
+- Website stack: Astro (static output) with Tailwind CSS now integrated.
+- Story `01.03` is complete, establishing a scalable styling baseline for the Mission Control design system phase.
+- Core routes (Home, Blog, Docs) retain stable URLs and build cleanly.
+
+## What Changed In This Slice
+
+1. Installed Tailwind toolchain dependencies (`tailwindcss`, `postcss`, `autoprefixer`) and configured PostCSS.
+2. Added `tailwind.config.mjs` with Team Orchestrator brand colors and a Mission Control palette (`mission.bg`, `mission.panel`, `mission.border`, etc.).
+3. Replaced monolithic static CSS patterns in `src/styles/global.css` with Tailwind `@tailwind` layers and `@apply`-driven component classes.
+4. Preserved and migrated layout/typography class contracts used by Home, Blog, and Docs templates, minimizing route-level churn.
+5. Validated end-to-end build success via `npm run build`.
+6. Completed backlog movement for Story `01.03`.
+
+## Risks
+
+- Styling currently uses Tailwind utility composition over existing semantic class names; Story `01.04` should continue extracting reusable UI components to reduce class-surface duplication.
+- Visual parity is preserved at build level, but subtle spacing/typography drift should be visually QA'd in `npm run dev` before broader design expansion.
+
+## Follow-Ups / Next Slice
+
+- Execute Story `01.04` from `docs/backlog/active/01.04-implement-mission-control-design-system-and-layout-components.md`.
+
 # Handoff Snapshot (2026-02-19, UI/UX Evaluation & Modernization Pivot)
 
 ## Current State

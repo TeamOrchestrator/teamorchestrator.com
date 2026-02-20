@@ -1,4 +1,6 @@
 ---
+import Button from '../../components/Button.astro';
+import Card from '../../components/Card.astro';
 import Layout from '../../layouts/Layout.astro';
 import {
   BLOG_POSTS_PER_PAGE,
@@ -28,7 +30,7 @@ const archive = getArchiveSummary(posts);
 
   <section class="section">
     <div class="container split">
-      <article class="card">
+      <Card>
         <h2>Tags</h2>
         <ul class="link-list">
           {tags.map((tag) => (
@@ -38,9 +40,9 @@ const archive = getArchiveSummary(posts);
             </li>
           ))}
         </ul>
-        <p><a href="/blog/tags">View all tags</a></p>
-      </article>
-      <article class="card">
+        <p><Button href="/blog/tags" variant="secondary">View all tags</Button></p>
+      </Card>
+      <Card>
         <h2>Archive</h2>
         <ul class="link-list">
           {archive.map((entry) => (
@@ -50,15 +52,15 @@ const archive = getArchiveSummary(posts);
             </li>
           ))}
         </ul>
-        <p><a href="/blog/archive">View full archive</a></p>
-      </article>
+        <p><Button href="/blog/archive" variant="secondary">View full archive</Button></p>
+      </Card>
     </div>
   </section>
 
   <section class="section">
     <div class="container post-grid">
       {pagePosts.map((post) => (
-        <article class="card">
+        <Card>
           <h2><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h2>
           <p>{post.data.description}</p>
           <p class="meta">{post.data.pubDate.toLocaleDateString()}</p>
@@ -70,7 +72,7 @@ const archive = getArchiveSummary(posts);
               </>
             ))}
           </p>
-        </article>
+        </Card>
       ))}
     </div>
     {totalPages > 1 && (

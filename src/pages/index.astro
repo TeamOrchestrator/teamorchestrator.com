@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import Terminal from '../components/Terminal.astro';
 ---
 
 <Layout
@@ -16,18 +19,11 @@ import Layout from '../layouts/Layout.astro';
 					auditable control plane to run specialist AI teams with Athena as the strategic orchestrator.
 				</p>
 				<div class="cta-row">
-					<a class="button primary" href="mailto:hello@teamorchestrator.com">Request Early Access</a>
-					<a class="button secondary" href="/docs">Explore Docs</a>
+					<Button variant="primary" href="mailto:hello@teamorchestrator.com">Request Early Access</Button>
+					<Button variant="secondary" href="/docs">Explore Docs</Button>
 				</div>
 			</div>
-			<aside class="card" aria-label="Product summary">
-				<h2>Team as a Service</h2>
-				<ul>
-					<li><strong>Flight Director:</strong> You set strategy and final decisions.</li>
-					<li><strong>Athena:</strong> Coordinates missions and preserves context.</li>
-					<li><strong>Specialists:</strong> Product, development, QA, and domain experts.</li>
-				</ul>
-			</aside>
+			<Terminal />
 		</div>
 	</section>
 
@@ -35,34 +31,34 @@ import Layout from '../layouts/Layout.astro';
 		<div class="container">
 			<h2>The control plane for managed autonomy</h2>
 			<div class="feature-grid">
-				<article class="card">
+				<Card>
 					<h3>Collaborative Intelligence</h3>
 					<p>
 						You are the Flight Director. Athena is your strategy partner that plans mission paths,
 						recommends specialists, and manages complex handoffs.
 					</p>
-				</article>
-				<article class="card">
+				</Card>
+				<Card>
 					<h3>Contextual Wisdom</h3>
 					<p>
 						Knowledge moves cleanly between agents through mission relay and context compounding, so every
 						step starts with the right briefing.
 					</p>
-				</article>
-				<article class="card">
+				</Card>
+				<Card>
 					<h3>Industrial Reliability</h3>
 					<p>
 						Human-grade collaboration is backed by machine-grade controls: auditability, policy-aware
 						execution, and observability for every mission.
 					</p>
-				</article>
-				<article class="card">
+				</Card>
+				<Card>
 					<h3>Total Control</h3>
 					<p>
 						Managed autonomy means agents run the work, while you hold the override key at every phase to
 						approve, modify, or reject a flight plan.
 					</p>
-				</article>
+				</Card>
 			</div>
 		</div>
 	</section>
@@ -105,17 +101,17 @@ import Layout from '../layouts/Layout.astro';
 
 	<section class="section">
 		<div class="container split">
-			<article class="card">
+			<Card>
 				<h2>Operational modes</h2>
 				<p><strong>Silent Run:</strong> Athena manages specialist execution and returns with outcomes.</p>
 				<p><strong>Active Bridge:</strong> Real-time collaborative sessions for planning and strategy.</p>
-			</article>
-			<article class="card">
+			</Card>
+			<Card>
 				<h2>Command surface</h2>
-				<p><strong>CLI:</strong> <code>athena run</code></p>
-				<p><strong>State:</strong> <code>.athena/</code></p>
-				<p><strong>Identity Header:</strong> <code>X-Athena-Identity</code></p>
-			</article>
+				<p><strong class="tech-label">CLI:</strong> <code>athena run</code></p>
+				<p><strong class="tech-label">State:</strong> <code>.athena/</code></p>
+				<p><strong class="tech-label">Identity Header:</strong> <code>X-Athena-Identity</code></p>
+			</Card>
 		</div>
 	</section>
 
@@ -124,10 +120,10 @@ import Layout from '../layouts/Layout.astro';
 			<h2>Current trajectory</h2>
 			<p class="lead compact">Team Orchestrator is currently in Stage 8 (in progress).</p>
 			<div class="roadmap-grid">
-				<article class="card"><h3>Foundation</h3><p>Mission Control backend.</p></article>
-				<article class="card"><h3>Mission Relay</h3><p>A2A coordination and context compounding.</p></article>
-				<article class="card"><h3>The Hangar</h3><p>Sandboxing, swarm provisioning, and PDK.</p></article>
-				<article class="card"><h3>Command Bridge</h3><p>Dashboard and Athena strategic HUD.</p></article>
+				<Card><h3>Foundation</h3><p>Mission Control backend.</p></Card>
+				<Card><h3>Mission Relay</h3><p>A2A coordination and context compounding.</p></Card>
+				<Card><h3>The Hangar</h3><p>Sandboxing, swarm provisioning, and PDK.</p></Card>
+				<Card><h3>Command Bridge</h3><p>Dashboard and Athena strategic HUD.</p></Card>
 			</div>
 		</div>
 	</section>
