@@ -12,12 +12,12 @@ Establish a repeatable development cycle for the Team Orchestrator website, alig
 
 ## Operating Rules
 
-- `docs/backlog/active/` is the source of truth for current work.
+- `internal-docs/backlog/active/` is the source of truth for current work.
 - Every completed slice must:
-  1. Update `docs/archive/handoff.md`
-  2. Move finished stories to `docs/backlog/completed/`
-  3. Refresh `docs/backlog/active/README.md`
-  4. Refresh `docs/prompts/active/next-agent-seed-prompt.md`
+  1. Update `internal-docs/archive/handoff.md`
+  2. Move finished stories to `internal-docs/backlog/completed/`
+  3. Refresh `internal-docs/backlog/active/README.md`
+  4. Refresh `internal-docs/prompts/active/next-agent-seed-prompt.md`
 - Prefer additive, backward-compatible documentation changes.
 - Keep roadmap and implementation plan synchronized when priorities shift.
 

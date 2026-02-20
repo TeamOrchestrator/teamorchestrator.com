@@ -31,7 +31,7 @@ All docs and blog content move through the same lifecycle:
   - Confirms references to canonical operational docs are intact.
 - **Cycle Owner (Agent for current slice)**
   - Runs build validation (`npm run build`).
-  - Completes handoff updates (`docs/archive/handoff.md`, backlog movement, next seed prompt).
+  - Completes handoff updates (`internal-docs/archive/handoff.md`, backlog movement, next seed prompt).
 
 ## 3. Publishing Flow
 
@@ -141,4 +141,4 @@ Before publishing docs or blog content:
 
 ## 7. Cycle Checklist Reference
 
-Before handoff, complete `docs/developer/cycle-checklist.md`.
+Before handoff, complete `internal-docs/developer/cycle-checklist.md`.

@@ -12,7 +12,7 @@ Define how documentation from `projectathena/docs` should be surfaced in TeamOrc
 | Domain | Canonical Source | Website Behavior |
 | --- | --- | --- |
 | Product runtime/control-plane internals | `projectathena/docs` | Mirror curated pages into website docs reference section |
-| Website operations/editorial workflow | `teamorchestrator.com/docs/developer` and `src/content/docs` | Authored and maintained locally |
+| Website operations/editorial workflow | `teamorchestrator.com/internal-docs/developer` and `src/content/docs` | Authored and maintained locally |
 | Marketing/product narrative | `teamorchestrator.com/src/content/*` | Authored and maintained locally |
 | Cross-repo architecture references | `projectathena` primary, website summary secondary | Website links to canonical source and imports stable summaries only |
 

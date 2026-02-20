@@ -14,7 +14,7 @@ Use this checklist before every handoff.
 - [ ] Lifecycle state for changed docs/blog content is explicit.
 - [ ] Build passes with `npm run build`.
 - [ ] Existing URLs remain stable.
-- [ ] Handoff snapshot updated in `docs/archive/handoff.md`.
-- [ ] Completed stories moved from `docs/backlog/active/` to `docs/backlog/completed/`.
+- [ ] Handoff snapshot updated in `internal-docs/archive/handoff.md`.
+- [ ] Completed stories moved from `internal-docs/backlog/active/` to `internal-docs/backlog/completed/`.
 - [ ] Active backlog ordering updated for the next cycle.
 - [ ] Seed prompt refreshed for the next cycle.

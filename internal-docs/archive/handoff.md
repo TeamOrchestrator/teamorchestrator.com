@@ -20,8 +20,8 @@
    - refusal to overwrite non-managed files.
 5. Added deterministic source trace metadata in generated frontmatter:
    - `sourcePath`, `sourceCommit`, `lastSyncedAt`, `generatedBy`, `generatedFromManifestId`.
-6. Added sync runbook: `docs/developer/projectathena-docs-sync.md`.
-7. Added local fixture source docs under `docs/fixtures/projectathena/docs/` for repeatable local validation.
+6. Added sync runbook: `internal-docs/developer/projectathena-docs-sync.md`.
+7. Added local fixture source docs under `internal-docs/fixtures/projectathena/docs/` for repeatable local validation.
 8. Ran sync and confirmed generated outputs in `src/content/docs/reference/*.md`.
 9. Validated with `npm run build` (pass) after generation.
 10. Completed backlog movement for Story `02.04`.
@@ -33,7 +33,7 @@
 
 ## Follow-Ups / Next Slice
 
-- Execute Story `03.01` from `docs/backlog/active/03.01-add-seo-and-social-metadata-baseline.md`.
+- Execute Story `03.01` from `internal-docs/backlog/active/03.01-add-seo-and-social-metadata-baseline.md`.
 
 # Handoff Snapshot (2026-02-19, Story 02.03 Complete)
 
@@ -44,10 +44,10 @@
 
 ## What Changed In This Slice
 
-1. Added manifest schema: `docs/architecture/projectathena-docs-ingestion-manifest.schema.json`.
-2. Added seeded ingestion manifest: `docs/architecture/projectathena-docs-ingestion-manifest.json`.
-3. Added ownership map and slug-lock policy: `docs/architecture/projectathena-docs-ingestion-ownership-map.md`.
-4. Updated architecture index to surface new ingestion-contract artifacts: `docs/architecture/README.md`.
+1. Added manifest schema: `internal-docs/architecture/projectathena-docs-ingestion-manifest.schema.json`.
+2. Added seeded ingestion manifest: `internal-docs/architecture/projectathena-docs-ingestion-manifest.json`.
+3. Added ownership map and slug-lock policy: `internal-docs/architecture/projectathena-docs-ingestion-ownership-map.md`.
+4. Updated architecture index to surface new ingestion-contract artifacts: `internal-docs/architecture/README.md`.
 5. Validated repository build via `npm run build` (pass).
 6. Completed backlog movement for Story `02.03`.
 
@@ -58,7 +58,7 @@
 
 ## Follow-Ups / Next Slice
 
-- Execute Story `02.04` from `docs/backlog/active/02.04-implement-projectathena-docs-sync-script-and-guardrails.md`.
+- Execute Story `02.04` from `internal-docs/backlog/active/02.04-implement-projectathena-docs-sync-script-and-guardrails.md`.
 
 # Handoff Snapshot (2026-02-19, Story 02.02 Complete)
 
@@ -73,8 +73,8 @@
 1. Added search index builder logic in `src/lib/docs-search-index.ts`.
 2. Implemented static JSON route at `src/pages/docs/search-index.json.ts` (`prerender = true`) to emit the build artifact.
 3. Indexed metadata includes title, description, route path, section ordering metadata, and heading metadata (depth 2-3).
-4. Added schema and downstream consumption contract docs in `docs/developer/docs-search-index-schema.md`.
-5. Linked new schema reference from `docs/developer/README.md`.
+4. Added schema and downstream consumption contract docs in `internal-docs/developer/docs-search-index-schema.md`.
+5. Linked new schema reference from `internal-docs/developer/README.md`.
 6. Validated via `npm run build` and confirmed emitted file `dist/docs/search-index.json`.
 7. Completed backlog movement for Story `02.02`.
 
@@ -85,7 +85,7 @@
 
 ## Follow-Ups / Next Slice
 
-- Execute Story `02.03` from `docs/backlog/active/02.03-establish-docs-ingestion-manifest-and-ownership-map.md`.
+- Execute Story `02.03` from `internal-docs/backlog/active/02.03-establish-docs-ingestion-manifest-and-ownership-map.md`.
 
 # Handoff Snapshot (2026-02-19, Story 01.05 Complete)
 
@@ -120,7 +120,7 @@
 
 ## Follow-Ups / Next Slice
 
-- Execute Story `02.02` from `docs/backlog/active/02.02-implement-docs-search-index-output.md`.
+- Execute Story `02.02` from `internal-docs/backlog/active/02.02-implement-docs-search-index-output.md`.
 
 # Handoff Snapshot (2026-02-19, Story 01.04 Complete)
 
@@ -152,7 +152,7 @@
 
 ## Follow-Ups / Next Slice
 
-- Execute Story `01.05` from `docs/backlog/active/01.05-create-interactive-terminal-demo-for-homepage.md`.
+- Execute Story `01.05` from `internal-docs/backlog/active/01.05-create-interactive-terminal-demo-for-homepage.md`.
 
 # Handoff Snapshot (2026-02-19, Story 01.03 Complete)
 
@@ -178,7 +178,7 @@
 
 ## Follow-Ups / Next Slice
 
-- Execute Story `01.04` from `docs/backlog/active/01.04-implement-mission-control-design-system-and-layout-components.md`.
+- Execute Story `01.04` from `internal-docs/backlog/active/01.04-implement-mission-control-design-system-and-layout-components.md`.
 
 # Handoff Snapshot (2026-02-19, UI/UX Evaluation & Modernization Pivot)
 
@@ -192,11 +192,11 @@
 ## What Changed In This Slice
 
 1. Conducted evaluation of current UI/UX and architectural foundation.
-2. Created three new prioritized user stories in `docs/backlog/active/`:
+2. Created three new prioritized user stories in `internal-docs/backlog/active/`:
     - `01.03`: Adopt Tailwind CSS for Design Consistency.
     - `01.04`: Implement "Mission Control" Design System & Layout Components.
     - `01.05`: Create Interactive Terminal Demo for Homepage.
-3. Updated `docs/backlog/active/README.md` to prioritize the design system modernization phase.
+3. Updated `internal-docs/backlog/active/README.md` to prioritize the design system modernization phase.
 4. Updated `next-agent-seed-prompt.md` to point to Story `01.03` as the next task.
 
 ## Risks
@@ -206,7 +206,7 @@
 
 ## Follow-Ups / Next Slice
 
-- Execute Story `01.03` from `docs/backlog/active/01.03-adopt-tailwind-css-for-design-consistency.md`.
+- Execute Story `01.03` from `internal-docs/backlog/active/01.03-adopt-tailwind-css-for-design-consistency.md`.
 
 # Handoff Snapshot (2026-02-19, Story 02.01 Complete)
 
@@ -218,7 +218,7 @@
 
 ## What Changed In This Slice
 
-1. Added strategy artifact: `docs/research/active/projectathena-docs-ingestion-strategy.md`.
+1. Added strategy artifact: `internal-docs/research/active/projectathena-docs-ingestion-strategy.md`.
 2. Defined source-of-truth ownership by documentation domain.
 3. Compared sync options (manual import, scripted copy with manifest, generated references) with trade-offs.
 4. Recommended default model: scripted copy with manifest, plus selective link-out.
@@ -233,7 +233,7 @@
 
 ## Follow-Ups / Next Slice
 
-- Execute Story `02.02` from `docs/backlog/active/02.02-implement-docs-search-index-output.md`.
+- Execute Story `02.02` from `internal-docs/backlog/active/02.02-implement-docs-search-index-output.md`.
 
 # Handoff Snapshot (2026-02-19, Story 01.02 Complete)
 
@@ -245,8 +245,8 @@
 
 ## What Changed In This Slice
 
-1. Added frontmatter templates and metadata/naming conventions in `docs/developer/docs-as-code-workflow.md`.
-2. Expanded `docs/developer/cycle-checklist.md` with pre-publish quality checks (headings, links, summaries, route validation).
+1. Added frontmatter templates and metadata/naming conventions in `internal-docs/developer/docs-as-code-workflow.md`.
+2. Expanded `internal-docs/developer/cycle-checklist.md` with pre-publish quality checks (headings, links, summaries, route validation).
 3. Added published docs guide at `/docs/content-templates-and-qa/` backed by `src/content/docs/content-templates-and-qa.md`.
 4. Updated docs index canonical operations links to include the new templates/QA page.
 5. Seeded blog metadata consistency by explicitly adding `draft: false` to `src/content/blog/introducing-team-orchestrator.md`.
@@ -258,7 +258,7 @@
 
 ## Follow-Ups / Next Slice
 
-- Execute Story `02.01` from `docs/backlog/active/02.01-wire-projectathena-reference-docs-ingestion-strategy.md`.
+- Execute Story `02.01` from `internal-docs/backlog/active/02.01-wire-projectathena-reference-docs-ingestion-strategy.md`.
 
 # Handoff Snapshot (2026-02-19, Story 01.01 Complete)
 
@@ -266,7 +266,7 @@
 
 - Website stack: Astro (static output).
 - Docs-as-code baseline is now established for this repository.
-- Canonical operational docs are defined in `docs/developer/docs-as-code-workflow.md` and `docs/developer/cycle-checklist.md`.
+- Canonical operational docs are defined in `internal-docs/developer/docs-as-code-workflow.md` and `internal-docs/developer/cycle-checklist.md`.
 - Public docs index now points to operations baselines via `/docs/docs-operations-workflow/` and `/docs/cycle-checklist/`.
 
 ## What Changed In This Slice
@@ -284,7 +284,7 @@
 
 ## Follow-Ups / Next Slice
 
-- Execute Story `01.02` from `docs/backlog/active/01.02-define-content-templates-and-qa-checklist.md`.
+- Execute Story `01.02` from `internal-docs/backlog/active/01.02-define-content-templates-and-qa-checklist.md`.
 
 # Handoff Snapshot (2026-02-19, Website Development Cycle Kickoff)
 
@@ -305,7 +305,7 @@
 2. Created implementation planning baseline for website stages.
 3. Created active backlog kickoff stories for the next implementation slices.
 4. Added seed prompt to drive the next agent cycle.
-5. Added enhanced website roadmap under `docs/backlog/roadmap/roadmap.md`.
+5. Added enhanced website roadmap under `internal-docs/backlog/roadmap/roadmap.md`.
 
 ## Risks
 
@@ -314,4 +314,4 @@
 
 ## Follow-Ups / Next Slice
 
-- Execute Story `01.01` from `docs/backlog/active/01.01-establish-docs-as-code-workflow.md`.
+- Execute Story `01.01` from `internal-docs/backlog/active/01.01-establish-docs-as-code-workflow.md`.

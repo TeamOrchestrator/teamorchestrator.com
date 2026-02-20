@@ -8,8 +8,8 @@ Generate website docs from curated `projectathena/docs` mappings defined in the 
 
 ## Inputs
 
-- Manifest: `docs/architecture/projectathena-docs-ingestion-manifest.json`
-- Manifest schema: `docs/architecture/projectathena-docs-ingestion-manifest.schema.json`
+- Manifest: `internal-docs/architecture/projectathena-docs-ingestion-manifest.json`
+- Manifest schema: `internal-docs/architecture/projectathena-docs-ingestion-manifest.schema.json`
 - Source root: local checkout path to `projectathena/docs`
 
 ## Command

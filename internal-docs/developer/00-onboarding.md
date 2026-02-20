@@ -16,12 +16,12 @@ Build and maintain a production-ready website for:
 - Team Orchestrator product stage is Stage 8 (in progress).
 
 Primary references for cycle execution:
-1. `docs/backlog/active/README.md`
-2. `docs/archive/handoff.md`
-3. `docs/archive/implementation-plan.md`
+1. `internal-docs/backlog/active/README.md`
+2. `internal-docs/archive/handoff.md`
+3. `internal-docs/archive/implementation-plan.md`
 4. `TODO.md`
-5. `docs/developer/docs-as-code-workflow.md`
-6. `docs/developer/cycle-checklist.md`
+5. `internal-docs/developer/docs-as-code-workflow.md`
+6. `internal-docs/developer/cycle-checklist.md`
 
 ## 3. Engineering Conventions
 
@@ -33,13 +33,13 @@ Primary references for cycle execution:
 ## 4. Docs-As-Code Baseline
 
 - Use lifecycle states for all docs/blog content: **Draft -> In Review -> Published -> Archived**.
-- Follow section ownership and reviewer expectations in `docs/developer/docs-as-code-workflow.md`.
-- Run the cycle checklist in `docs/developer/cycle-checklist.md` before handoff.
+- Follow section ownership and reviewer expectations in `internal-docs/developer/docs-as-code-workflow.md`.
+- Run the cycle checklist in `internal-docs/developer/cycle-checklist.md` before handoff.
 
 ## 5. Mandatory End-Of-Cycle Handoff
 
 Before ending a cycle, always:
-1. Update `docs/archive/handoff.md` with a new top snapshot.
-2. Move completed stories from `docs/backlog/active/` to `docs/backlog/completed/`.
-3. Update `docs/backlog/active/README.md` with next priorities.
-4. Refresh `docs/prompts/active/next-agent-seed-prompt.md` for the next cycle.
+1. Update `internal-docs/archive/handoff.md` with a new top snapshot.
+2. Move completed stories from `internal-docs/backlog/active/` to `internal-docs/backlog/completed/`.
+3. Update `internal-docs/backlog/active/README.md` with next priorities.
+4. Refresh `internal-docs/prompts/active/next-agent-seed-prompt.md` for the next cycle.

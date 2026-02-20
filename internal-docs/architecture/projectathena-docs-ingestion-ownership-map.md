@@ -8,8 +8,8 @@ Define ownership and review responsibilities for Athena docs imported into TeamO
 
 ## Manifest Contract
 
-- Manifest file: `docs/architecture/projectathena-docs-ingestion-manifest.json`
-- Schema file: `docs/architecture/projectathena-docs-ingestion-manifest.schema.json`
+- Manifest file: `internal-docs/architecture/projectathena-docs-ingestion-manifest.json`
+- Schema file: `internal-docs/architecture/projectathena-docs-ingestion-manifest.schema.json`
 - Canonical source repo for mapped pages: `projectathena/docs`
 
 Required entry fields:
@@ -37,11 +37,11 @@ Required entry fields:
 | Security and identity | `projectathena/docs/platform/security/*` | Athena Security | `@athena-security`, `@website-docs` | Import public-safe contract summaries |
 | Observability and auditability | `projectathena/docs/platform/observability/*` | Athena Platform | `@athena-platform`, `@website-docs` | Import event model and evidence references |
 | API reference | `projectathena/docs/api/*` | Athena API | `@athena-api`, `@website-docs` | Import endpoint-level contracts for docs users |
-| Website operations/editorial | `teamorchestrator.com/docs/developer` and `src/content/docs` | Website Docs | `@website-docs` | Local source of truth (not imported) |
+| Website operations/editorial | `teamorchestrator.com/internal-docs/developer` and `src/content/docs` | Website Docs | `@website-docs` | Local source of truth (not imported) |
 
 ## Initial Curated Athena Mappings
 
-Seed entries are defined in `docs/architecture/projectathena-docs-ingestion-manifest.json` and are intentionally small to keep first sync scope reviewable.
+Seed entries are defined in `internal-docs/architecture/projectathena-docs-ingestion-manifest.json` and are intentionally small to keep first sync scope reviewable.
 
 Initial curated IDs:
 

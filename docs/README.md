@@ -1,22 +1,12 @@
-# Team Orchestrator Documentation
+# Team Orchestrator Public Documentation Source
 
-This folder mirrors the `projectathena/docs` development-cycle structure for the website repository.
+This directory contains source material intended for public consumption on the Team Orchestrator website.
 
-## Sections
+## Structure
 
-- `architecture/`
-- `archive/`
-- `backlog/`
-- `developer/`
-- `getting-started/`
-- `prompts/`
-- `research/`
-- `user/`
+- `getting-started/` - Quick start guides and onboarding for users.
+- `user/` - User-facing documentation.
 
-> Note: `personas/` is intentionally excluded for this repo.
+## Internal Documentation
 
-## Canonical Operational Docs
-
-- Docs-as-code workflow: `docs/developer/docs-as-code-workflow.md`
-- Per-cycle execution checklist: `docs/developer/cycle-checklist.md`
-- Current cycle handoff: `docs/archive/handoff.md`
+Internal project documentation (backlog, roadmap, architecture, prompts) has been moved to `internal-docs/`.

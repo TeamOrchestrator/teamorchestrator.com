@@ -21,10 +21,10 @@ Use this checklist at the end of every development cycle.
 
 ## Handoff Operations (Mandatory)
 
-- [ ] Add a new top snapshot to `docs/archive/handoff.md`.
-- [ ] Move completed story files from `docs/backlog/active/` to `docs/backlog/completed/`.
-- [ ] Update `docs/backlog/active/README.md` with next story order.
-- [ ] Refresh `docs/prompts/active/next-agent-seed-prompt.md` for the next cycle.
+- [ ] Add a new top snapshot to `internal-docs/archive/handoff.md`.
+- [ ] Move completed story files from `internal-docs/backlog/active/` to `internal-docs/backlog/completed/`.
+- [ ] Update `internal-docs/backlog/active/README.md` with next story order.
+- [ ] Refresh `internal-docs/prompts/active/next-agent-seed-prompt.md` for the next cycle.
 
 ## Reporting
 

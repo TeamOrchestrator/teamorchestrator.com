@@ -18,6 +18,6 @@ This sprint now shifts from docs productization to discoverability and growth in
 
 1. Docs + code updates completed for in-scope stories.
 2. Build passes: `npm run build`.
-3. Handoff updated: `docs/archive/handoff.md`.
+3. Handoff updated: `internal-docs/archive/handoff.md`.
 4. Story movement performed: active -> completed.
 5. Next cycle prompt refreshed.

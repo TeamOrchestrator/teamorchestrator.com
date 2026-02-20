@@ -39,5 +39,5 @@ All documentation and blog content follows four states:
 
 ## Canonical operational references
 
-- Repository workflow reference: `docs/developer/docs-as-code-workflow.md`
-- Per-cycle checklist: `docs/developer/cycle-checklist.md`
+- Repository workflow reference: `internal-docs/developer/docs-as-code-workflow.md`
+- Per-cycle checklist: `internal-docs/developer/cycle-checklist.md`
