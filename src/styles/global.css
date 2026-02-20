@@ -108,6 +108,14 @@
     @apply grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_auto];
   }
 
+  .hero-grid.hero-grid-stacked {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-grid.hero-grid-stacked .terminal-shell {
+    margin-top: 0.5rem;
+  }
+
   .eyebrow {
     @apply mb-2 text-xs font-semibold uppercase tracking-[0.08em] text-brand;
   }
