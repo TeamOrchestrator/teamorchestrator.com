@@ -6,4 +6,4 @@ Source of truth for work items lives in `docs/backlog/`:
 - Roadmap: `docs/backlog/roadmap/roadmap.md`
 
 Current focus (Website Foundation Cycle):
-- Story `02.04`: implement ProjectAthena docs sync script and guardrails.
+- Story `03.01`: add SEO and social metadata baseline.
