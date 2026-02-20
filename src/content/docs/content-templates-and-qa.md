@@ -1,6 +1,7 @@
 ---
 title: Content Templates and QA Checklist
 description: Standard templates, metadata conventions, and pre-publish quality checks for docs and blog content.
+audience: internal
 section: Operations
 sectionOrder: 2
 order: 3

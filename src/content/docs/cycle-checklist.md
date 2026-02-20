@@ -1,6 +1,7 @@
 ---
 title: Cycle Checklist
 description: End-of-cycle checklist for documentation publishing and handoff discipline.
+audience: internal
 section: Operations
 sectionOrder: 2
 order: 2

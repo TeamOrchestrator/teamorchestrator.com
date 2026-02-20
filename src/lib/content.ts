@@ -64,8 +64,14 @@ export const getPageItems = <T>(items: T[], pageNumber: number, perPage: number)
   return items.slice(start, start + perPage);
 };
 
-export const getSortedDocs = async (): Promise<DocsEntry[]> => {
-  const docs = await getCollection('docs');
+interface GetSortedDocsOptions {
+  includeInternal?: boolean;
+}
+
+export const getSortedDocs = async ({
+  includeInternal = false,
+}: GetSortedDocsOptions = {}): Promise<DocsEntry[]> => {
+  const docs = await getCollection('docs', ({ data }) => includeInternal || data.audience === 'public');
   return docs.sort((a, b) => {
     if (a.data.sectionOrder !== b.data.sectionOrder) {
       return a.data.sectionOrder - b.data.sectionOrder;

@@ -11,6 +11,7 @@ const GENERATED_HEADER = [
 
 const DEFAULT_MANIFEST = 'internal-docs/architecture/projectathena-docs-ingestion-manifest.json';
 const DEFAULT_DEST_ROOT = 'src/content/docs';
+const DEFAULT_SOURCE_ROOT = '~/Source/projectathena/docs';
 const DEFAULT_SECTION = 'Reference';
 const DEFAULT_SECTION_ORDER = 3;
 const DEFAULT_SYNCED_AT = '1970-01-01T00:00:00.000Z';
@@ -18,7 +19,7 @@ const DEFAULT_SYNCED_AT = '1970-01-01T00:00:00.000Z';
 const parseArgs = (argv) => {
   const args = {
     manifest: DEFAULT_MANIFEST,
-    sourceRoot: null,
+    sourceRoot: process.env.PROJECTATHENA_DOCS_ROOT || DEFAULT_SOURCE_ROOT,
     destRoot: DEFAULT_DEST_ROOT,
     sourceCommit: 'unknown',
     syncedAt: DEFAULT_SYNCED_AT,
@@ -57,7 +58,7 @@ const printHelp = () => {
 
 Options:
   --manifest <path>       Manifest path (default: ${DEFAULT_MANIFEST})
-  --source-root <path>    Root path for projectathena/docs (required)
+  --source-root <path>    Root path for projectathena/docs (default: ${DEFAULT_SOURCE_ROOT})
   --dest-root <path>      Destination docs content root (default: ${DEFAULT_DEST_ROOT})
   --source-commit <sha>   Traceability commit value (default: unknown)
   --synced-at <iso-time>  lastSyncedAt value (default: ${DEFAULT_SYNCED_AT})
@@ -104,6 +105,10 @@ const ensureIsoTimestamp = (value) => {
 };
 
 const normalizeDescription = (value) => value?.replace(/\s+/g, ' ').trim() ?? '';
+const extractMarkdownTitle = (body) => {
+  const match = body.match(/^#\s+(.+)$/m);
+  return match?.[1]?.trim() || null;
+};
 
 const buildFrontmatter = ({
   title,
@@ -117,10 +122,10 @@ const buildFrontmatter = ({
 }) => `---
 title: ${JSON.stringify(title)}
 description: ${JSON.stringify(description)}
+audience: "public"
 section: ${JSON.stringify(DEFAULT_SECTION)}
 sectionOrder: ${DEFAULT_SECTION_ORDER}
 order: ${order}
-slug: ${JSON.stringify(destinationSlug)}
 sourcePath: ${JSON.stringify(sourcePath)}
 sourceCommit: ${JSON.stringify(sourceCommit)}
 lastSyncedAt: ${JSON.stringify(syncedAt)}
@@ -130,6 +135,24 @@ generatedFromManifestId: ${JSON.stringify(manifestId)}
 `;
 
 const sha256 = (value) => createHash('sha256').update(value).digest('hex');
+
+const collectMarkdownFiles = async (rootPath) => {
+  const files = [];
+  const entries = await fs.readdir(rootPath, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const fullPath = path.join(rootPath, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...(await collectMarkdownFiles(fullPath)));
+      continue;
+    }
+    if (entry.isFile() && fullPath.endsWith('.md')) {
+      files.push(fullPath);
+    }
+  }
+
+  return files;
+};
 
 const ensureManagedWrite = async (targetPath, content) => {
   try {
@@ -149,14 +172,37 @@ const ensureManagedWrite = async (targetPath, content) => {
   await fs.writeFile(targetPath, content, 'utf8');
 };
 
-const main = async () => {
-  const args = parseArgs(process.argv.slice(2));
-  if (!args.sourceRoot) {
-    throw new Error('Missing required option: --source-root');
+const pruneManagedFiles = async (destRoot, managedOutputFiles) => {
+  try {
+    await fs.access(destRoot);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      return [];
+    }
+    throw error;
   }
 
+  const managedSet = new Set(managedOutputFiles.map((filePath) => path.resolve(filePath)));
+  const removedFiles = [];
+  const files = await collectMarkdownFiles(destRoot);
+
+  for (const filePath of files) {
+    if (managedSet.has(path.resolve(filePath))) continue;
+
+    const raw = await fs.readFile(filePath, 'utf8');
+    if (!raw.includes('<!-- GENERATED FILE: DO NOT EDIT -->')) continue;
+
+    await fs.unlink(filePath);
+    removedFiles.push(path.relative(process.cwd(), filePath));
+  }
+
+  return removedFiles;
+};
+
+const main = async () => {
+  const args = parseArgs(process.argv.slice(2));
   const manifestPath = path.resolve(args.manifest);
-  const sourceRoot = path.resolve(args.sourceRoot);
+  const sourceRoot = path.resolve(args.sourceRoot.replace(/^~(?=$|\/|\\)/, process.env.HOME || '~'));
   const destRoot = path.resolve(args.destRoot);
   const syncedAt = ensureIsoTimestamp(args.syncedAt);
 
@@ -209,7 +255,7 @@ const main = async () => {
     const entry = orderedEntries[index];
     const sourceRaw = await fs.readFile(entry.sourceAbsolutePath, 'utf8');
     const { frontmatter, body } = parseSimpleFrontmatter(sourceRaw);
-    const title = frontmatter.title ?? entry.id;
+    const title = frontmatter.title ?? extractMarkdownTitle(body) ?? entry.id;
     const description = normalizeDescription(frontmatter.description || `${title} reference documentation.`);
     const destinationPath = path.join(destRoot, `${entry.destinationSlug}.md`);
     const frontmatterBlock = buildFrontmatter({
@@ -234,11 +280,19 @@ const main = async () => {
     ].join('\n');
 
     await ensureManagedWrite(destinationPath, output);
-    managedOutputFiles.push(path.relative(process.cwd(), destinationPath));
+    managedOutputFiles.push(destinationPath);
   }
 
-  console.log(`Synced ${managedOutputFiles.length} docs entries from manifest.`);
-  managedOutputFiles.forEach((filePath) => console.log(`- ${filePath}`));
+  const removedFiles = await pruneManagedFiles(destRoot, managedOutputFiles);
+  const managedOutputFilesRelative = managedOutputFiles.map((filePath) => path.relative(process.cwd(), filePath));
+
+  console.log(`Synced ${managedOutputFilesRelative.length} docs entries from manifest.`);
+  managedOutputFilesRelative.forEach((filePath) => console.log(`- ${filePath}`));
+
+  if (removedFiles.length > 0) {
+    console.log(`Removed ${removedFiles.length} stale generated docs files:`);
+    removedFiles.forEach((filePath) => console.log(`- ${filePath}`));
+  }
 };
 
 main().catch((error) => {

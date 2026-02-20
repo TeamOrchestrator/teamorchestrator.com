@@ -16,13 +16,13 @@ Generate website docs from curated `projectathena/docs` mappings defined in the 
 
 ```bash
 npm run sync:projectathena-docs -- \
-  --source-root /absolute/path/to/projectathena/docs \
-  --source-commit <source_commit_sha> \
-  --synced-at 2026-02-19T00:00:00.000Z
+  --source-commit "$(git -C ~/Source/projectathena rev-parse --short HEAD)" \
+  --synced-at "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 ```
 
 Optional flags:
 
+- `--source-root <path>` (default: `~/Source/projectathena/docs`; override via `PROJECTATHENA_DOCS_ROOT`)
 - `--manifest <path>`
 - `--dest-root <path>`
 

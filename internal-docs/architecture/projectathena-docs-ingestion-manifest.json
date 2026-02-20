@@ -8,84 +8,116 @@
   },
   "entries": [
     {
-      "id": "athena-runtime-control-plane-overview",
-      "domain": "runtime-control-plane",
-      "sourcePath": "platform/runtime/control-plane-overview.md",
-      "destinationSlug": "reference/athena-control-plane-overview",
+      "id": "athena-user-quickstart",
+      "domain": "user-guides",
+      "sourcePath": "user/00-quickstart.md",
+      "destinationSlug": "reference/athena-user-quickstart",
       "owner": {
-        "team": "Athena Runtime",
-        "reviewers": [
-          "@athena-runtime",
-          "@website-docs"
-        ]
-      },
-      "lifecycleState": "in_review",
-      "slugLocked": true,
-      "notes": "Core runtime contract overview intended for public reference."
-    },
-    {
-      "id": "athena-agent-orchestration-lifecycle",
-      "domain": "runtime-control-plane",
-      "sourcePath": "platform/runtime/agent-orchestration-lifecycle.md",
-      "destinationSlug": "reference/athena-agent-orchestration-lifecycle",
-      "owner": {
-        "team": "Athena Runtime",
-        "reviewers": [
-          "@athena-runtime",
-          "@website-docs"
-        ]
-      },
-      "lifecycleState": "in_review",
-      "slugLocked": true,
-      "notes": "Maps mission relay and context compounding behavior."
-    },
-    {
-      "id": "athena-identity-and-authn",
-      "domain": "security-and-identity",
-      "sourcePath": "platform/security/identity-and-authn.md",
-      "destinationSlug": "reference/athena-identity-and-authn",
-      "owner": {
-        "team": "Athena Security",
-        "reviewers": [
-          "@athena-security",
-          "@website-docs"
-        ]
-      },
-      "lifecycleState": "draft",
-      "slugLocked": true,
-      "notes": "Public-safe identity surface and trust model."
-    },
-    {
-      "id": "athena-observability-and-audit-events",
-      "domain": "observability",
-      "sourcePath": "platform/observability/audit-events.md",
-      "destinationSlug": "reference/athena-audit-events",
-      "owner": {
-        "team": "Athena Platform",
+        "team": "Athena Docs",
         "reviewers": [
           "@athena-platform",
           "@website-docs"
         ]
       },
-      "lifecycleState": "draft",
+      "lifecycleState": "in_review",
       "slugLocked": true,
-      "notes": "Event model baseline for auditability and trace reporting."
+      "notes": "Quickstart workflow and prerequisites."
     },
     {
-      "id": "athena-api-mission-run-endpoint",
-      "domain": "api-reference",
-      "sourcePath": "api/mission-run-endpoint.md",
-      "destinationSlug": "reference/athena-mission-run-endpoint",
+      "id": "athena-user-introduction",
+      "domain": "user-guides",
+      "sourcePath": "user/01-introduction.md",
+      "destinationSlug": "reference/athena-user-introduction",
       "owner": {
-        "team": "Athena API",
+        "team": "Athena Docs",
         "reviewers": [
-          "@athena-api",
+          "@athena-platform",
           "@website-docs"
         ]
       },
       "lifecycleState": "in_review",
       "slugLocked": true,
-      "notes": "Customer-facing endpoint behavior and payload contract."
+      "notes": "Product introduction and core concepts."
+    },
+    {
+      "id": "athena-user-installation-and-configuration",
+      "domain": "user-guides",
+      "sourcePath": "user/02-installation.md",
+      "destinationSlug": "reference/athena-user-installation-and-configuration",
+      "owner": {
+        "team": "Athena Docs",
+        "reviewers": [
+          "@athena-platform",
+          "@website-docs"
+        ]
+      },
+      "lifecycleState": "in_review",
+      "slugLocked": true,
+      "notes": "Installation and environment configuration reference."
+    },
+    {
+      "id": "athena-user-basic-usage",
+      "domain": "user-guides",
+      "sourcePath": "user/03-basic-usage.md",
+      "destinationSlug": "reference/athena-user-basic-usage",
+      "owner": {
+        "team": "Athena Docs",
+        "reviewers": [
+          "@athena-platform",
+          "@website-docs"
+        ]
+      },
+      "lifecycleState": "in_review",
+      "slugLocked": true,
+      "notes": "CLI usage and persona execution basics."
+    },
+    {
+      "id": "athena-user-api-server",
+      "domain": "user-guides",
+      "sourcePath": "user/04-api-server.md",
+      "destinationSlug": "reference/athena-user-api-server",
+      "owner": {
+        "team": "Athena Docs",
+        "reviewers": [
+          "@athena-platform",
+          "@website-docs"
+        ]
+      },
+      "lifecycleState": "in_review",
+      "slugLocked": true,
+      "notes": "API-first architecture and endpoint overview."
+    },
+    {
+      "id": "athena-user-advanced-usage",
+      "domain": "user-guides",
+      "sourcePath": "user/05-advanced-usage.md",
+      "destinationSlug": "reference/athena-user-advanced-usage",
+      "owner": {
+        "team": "Athena Docs",
+        "reviewers": [
+          "@athena-platform",
+          "@website-docs"
+        ]
+      },
+      "lifecycleState": "in_review",
+      "slugLocked": true,
+      "notes": "Scheduling, policy, and advanced operations."
+    },
+    {
+      "id": "athena-user-api-examples",
+      "domain": "user-guides",
+      "sourcePath": "user/06-api-examples.md",
+      "destinationSlug": "reference/athena-user-api-examples",
+      "owner": {
+        "team": "Athena Docs",
+        "reviewers": [
+          "@athena-platform",
+          "@website-docs"
+        ]
+      },
+      "lifecycleState": "in_review",
+      "slugLocked": true,
+      "notes": "API v1 request/response examples."
     }
   ]
 }

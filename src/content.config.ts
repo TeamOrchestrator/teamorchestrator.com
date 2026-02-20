@@ -18,6 +18,7 @@ const docs = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    audience: z.enum(['public', 'internal']).default('public'),
     section: z.string().default('General'),
     sectionOrder: z.number().default(100),
     order: z.number().default(0),
