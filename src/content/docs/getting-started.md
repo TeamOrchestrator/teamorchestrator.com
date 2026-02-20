@@ -28,5 +28,10 @@ We believe in **Managed Autonomy**. This means shifting away from "black-box" au
 Access the command surface through our native instrumentation:
 
 - **CLI:** `athena run` — The primary mission deployment interface.
+- **Mission Run API:** `POST /api/v1/mission/run` — Orchestrate specialist teams programmatically.
 - **State Directory:** `.athena/` — Local mission context and telemetry storage.
-- **Identity Header:** `X-Athena-Identity` — The security boundary for cross-agent trust.
+- **Real-time Observability:** Athena now emits lifecycle audit events for every mission phase.
+
+## Security Boundary
+
+- **Identity Header:** `X-Athena-Identity` — The security boundary for cross-agent trust and workload isolation.

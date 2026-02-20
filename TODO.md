@@ -7,3 +7,5 @@ Source of truth for work items lives in `internal-docs/backlog/`:
 
 Current focus (Website Foundation Cycle):
 - Story `03.05`: define content backup and rollback process.
+- [ ] Finalize Mission Run API documentation.
+- [ ] Perform end-to-end sync validation with production manifest.
