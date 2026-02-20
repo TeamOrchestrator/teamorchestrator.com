@@ -21,7 +21,15 @@ const archive = getArchiveSummary(posts);
       <Card as="ul" class="link-list">
         {archive.map((entry) => (
           <li>
-            <a href={`/blog/archive/${entry.year}/`}>{entry.year}</a>
+            <a
+              href={`/blog/archive/${entry.year}/`}
+              data-analytics-event="blog_archive_click"
+              data-analytics-category="blog"
+              data-analytics-label={entry.year}
+              data-analytics-location="blog_archive_index"
+            >
+              {entry.year}
+            </a>
             <span class="meta"> ({entry.count})</span>
           </li>
         ))}

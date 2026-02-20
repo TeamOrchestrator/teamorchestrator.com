@@ -11,19 +11,19 @@ You are beginning a new development cycle in TeamOrchestrator.com.
 
 ## Current Context
 
-Stories 01.03, 01.04, 01.05, 02.02, 02.03, and 02.04 are complete: Mission Control UI baseline is in place, docs search index output is generated, and manifest-driven docs sync with guardrails now exists. The next cycle should focus on discoverability by establishing SEO/social metadata baselines.
+Stories 01.03, 01.04, 01.05, 02.02, 02.03, 02.04, 03.01, 03.02, 03.03, and 03.04 are complete: Mission Control UI baseline is in place, docs sync/search infrastructure is in place, terminal layout stability is fixed, SEO/social metadata baselines are established, analytics event taxonomy/instrumentation is in place, and deployment smoke checks now guard core routes/internal links. The next cycle should focus on operational resilience with an explicit backup and rollback workflow.
 
-## Task: Story 03.01 — Add SEO and Social Metadata Baseline
+## Task: Story 03.05 — Define Content Backup and Rollback Process
 
-Establish foundational SEO and social metadata across core website routes.
+Define a practical backup and rollback process for website content regressions.
 
-1. Add canonical metadata defaults in shared layout.
-2. Add Open Graph and Twitter card metadata for Home, Blog index/post, and Docs index/doc routes.
-3. Keep route-specific title/description metadata intact.
-4. Document metadata conventions for future content additions.
+1. Document rollback triggers and recovery decision points for content/metadata regressions.
+2. Define backup expectations for key content and documentation surfaces.
+3. Add an operator runbook with rollback and post-rollback verification commands.
+4. Keep the process aligned with existing git-based workflow and static validation steps.
 5. Validate static output and ensure no URL/path regressions.
 
-**Reference:** `internal-docs/backlog/active/03.01-add-seo-and-social-metadata-baseline.md`
+**Reference:** `internal-docs/backlog/active/03.05-define-content-backup-and-rollback-process.md`
 
 ## Constraints
 

@@ -10,12 +10,14 @@ const lines = [
   '[Evidence] Bundle archived at .athena/evidence/deploy-feature-branch-2026-02-19.json',
   '[Mission] Status: SUCCESS. Awaiting Flight Director confirmation.',
 ];
+const maxLineLength = Math.max(...lines.map((line) => line.length));
 ---
 
 <Card
   as="aside"
   elevated={true}
   class="terminal-shell"
+  style={`--terminal-max-ch: ${maxLineLength};`}
   aria-label="Interactive terminal demo showing a mission sequence"
 >
   <div class="terminal-header">

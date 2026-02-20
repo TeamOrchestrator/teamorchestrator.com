@@ -22,7 +22,12 @@ const { Content } = await post.render();
 const postYear = String(post.data.pubDate.getFullYear());
 ---
 
-<Layout title={`${post.data.title} | Team Orchestrator Blog`} description={post.data.description}>
+<Layout
+  title={`${post.data.title} | Team Orchestrator Blog`}
+  description={post.data.description}
+  ogType="article"
+  twitterCard="summary"
+>
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">Blog</p>
@@ -34,11 +39,30 @@ const postYear = String(post.data.pubDate.getFullYear());
         {post.data.tags.map((tag, index) => (
           <>
             {index > 0 && ' · '}
-            <a href={`/blog/tags/${slugifyTag(tag)}/`}>{tag}</a>
+            <a
+              href={`/blog/tags/${slugifyTag(tag)}/`}
+              data-analytics-event="blog_tag_click"
+              data-analytics-category="blog"
+              data-analytics-label={slugifyTag(tag)}
+              data-analytics-location="blog_post_header"
+            >
+              {tag}
+            </a>
           </>
         ))}
       </p>
-      <p><Button href={`/blog/archive/${postYear}/`} variant="secondary">More from {postYear}</Button></p>
+      <p>
+        <Button
+          href={`/blog/archive/${postYear}/`}
+          variant="secondary"
+          analyticsEvent="blog_archive_click"
+          analyticsCategory="blog"
+          analyticsLabel={postYear}
+          analyticsLocation="blog_post_header"
+        >
+          More from {postYear}
+        </Button>
+      </p>
     </div>
   </section>
 

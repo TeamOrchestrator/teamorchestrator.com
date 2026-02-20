@@ -68,6 +68,15 @@ Recommended for consistency:
 - Keep tags in lowercase kebab-case.
 - Keep `description` to one specific sentence focused on reader value.
 
+## SEO and social metadata conventions
+
+- Canonical URLs are generated automatically in the shared layout from each route path.
+- Open Graph and Twitter card tags are generated from each route's `title` and `description`.
+- Keep route-level `title` and `description` specific; these fields power both HTML metadata and social previews.
+- For detail pages (for example `/blog/*` posts and `/docs/*` docs), use `ogType="article"` in route templates.
+- For index and landing pages, use `ogType="website"`.
+- If a route needs a custom canonical path or social image in the future, pass explicit metadata props through `Layout.astro` instead of hardcoding tags in page templates.
+
 ## Pre-publish QA checks
 
 Before publish:

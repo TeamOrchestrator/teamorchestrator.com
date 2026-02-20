@@ -4,6 +4,10 @@ interface Props {
   variant?: 'primary' | 'secondary';
   class?: string;
   mono?: boolean;
+  analyticsEvent?: string;
+  analyticsCategory?: string;
+  analyticsLabel?: string;
+  analyticsLocation?: string;
 }
 
 const {
@@ -11,19 +15,31 @@ const {
   variant = 'secondary',
   class: className,
   mono = false,
+  analyticsEvent,
+  analyticsCategory,
+  analyticsLabel,
+  analyticsLocation,
   ...props
 } = Astro.props as Props;
 
 const classes = ['button', variant, mono && 'tech-label', className];
+const analyticsAttrs = analyticsEvent
+  ? {
+      'data-analytics-event': analyticsEvent,
+      'data-analytics-category': analyticsCategory,
+      'data-analytics-label': analyticsLabel,
+      'data-analytics-location': analyticsLocation,
+    }
+  : {};
 ---
 
 {
   href ? (
-    <a class:list={classes} href={href} {...props}>
+    <a class:list={classes} href={href} {...analyticsAttrs} {...props}>
       <slot />
     </a>
   ) : (
-    <button class:list={classes} type="button" {...props}>
+    <button class:list={classes} type="button" {...analyticsAttrs} {...props}>
       <slot />
     </button>
   )

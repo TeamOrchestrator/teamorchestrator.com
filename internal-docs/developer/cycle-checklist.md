@@ -16,6 +16,7 @@ Use this checklist at the end of every development cycle.
 ## Validation
 
 - [ ] Build passes locally: `npm run build`.
+- [ ] Static smoke checks pass: `npm run check:static` (or `npm run validate:deploy`).
 - [ ] URL paths remain stable for existing docs/blog routes.
 - [ ] New/updated routes resolve correctly under `/docs/*` or `/blog/*`.
 

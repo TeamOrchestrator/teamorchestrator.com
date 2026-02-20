@@ -21,7 +21,15 @@ const tags = getTagSummary(posts);
       <Card as="ul" class="link-list">
         {tags.map((tag) => (
           <li>
-            <a href={`/blog/tags/${tag.slug}/`}>{tag.tag}</a>
+            <a
+              href={`/blog/tags/${tag.slug}/`}
+              data-analytics-event="blog_tag_click"
+              data-analytics-category="blog"
+              data-analytics-label={tag.slug}
+              data-analytics-location="blog_tags_index"
+            >
+              {tag.tag}
+            </a>
             <span class="meta"> ({tag.count})</span>
           </li>
         ))}

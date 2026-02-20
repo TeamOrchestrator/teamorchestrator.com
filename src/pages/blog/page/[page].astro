@@ -53,24 +53,62 @@ const archive = getArchiveSummary(posts);
         <ul class="link-list">
           {tags.map((tag) => (
             <li>
-              <a href={`/blog/tags/${tag.slug}/`}>{tag.tag}</a>
+              <a
+                href={`/blog/tags/${tag.slug}/`}
+                data-analytics-event="blog_tag_click"
+                data-analytics-category="blog"
+                data-analytics-label={tag.slug}
+                data-analytics-location="blog_page_tags_card"
+              >
+                {tag.tag}
+              </a>
               <span class="meta"> ({tag.count})</span>
             </li>
           ))}
         </ul>
-        <p><Button href="/blog/tags" variant="secondary">View all tags</Button></p>
+        <p>
+          <Button
+            href="/blog/tags"
+            variant="secondary"
+            analyticsEvent="blog_navigation_click"
+            analyticsCategory="blog"
+            analyticsLabel="view_all_tags"
+            analyticsLocation="blog_page_tags_card"
+          >
+            View all tags
+          </Button>
+        </p>
       </Card>
       <Card>
         <h2>Archive</h2>
         <ul class="link-list">
           {archive.map((entry) => (
             <li>
-              <a href={`/blog/archive/${entry.year}/`}>{entry.year}</a>
+              <a
+                href={`/blog/archive/${entry.year}/`}
+                data-analytics-event="blog_archive_click"
+                data-analytics-category="blog"
+                data-analytics-label={entry.year}
+                data-analytics-location="blog_page_archive_card"
+              >
+                {entry.year}
+              </a>
               <span class="meta"> ({entry.count})</span>
             </li>
           ))}
         </ul>
-        <p><Button href="/blog/archive" variant="secondary">View full archive</Button></p>
+        <p>
+          <Button
+            href="/blog/archive"
+            variant="secondary"
+            analyticsEvent="blog_navigation_click"
+            analyticsCategory="blog"
+            analyticsLabel="view_full_archive"
+            analyticsLocation="blog_page_archive_card"
+          >
+            View full archive
+          </Button>
+        </p>
       </Card>
     </div>
   </section>
@@ -79,14 +117,32 @@ const archive = getArchiveSummary(posts);
     <div class="container post-grid">
       {pagePosts.map((post) => (
         <Card>
-          <h2><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h2>
+          <h2>
+            <a
+              href={`/blog/${post.slug}/`}
+              data-analytics-event="blog_post_click"
+              data-analytics-category="blog"
+              data-analytics-label={post.slug}
+              data-analytics-location="blog_page_post_grid"
+            >
+              {post.data.title}
+            </a>
+          </h2>
           <p>{post.data.description}</p>
           <p class="meta">{post.data.pubDate.toLocaleDateString()}</p>
           <p class="meta">
             {post.data.tags.map((tag, index) => (
               <>
                 {index > 0 && ' · '}
-                <a href={`/blog/tags/${slugifyTag(tag)}/`}>{tag}</a>
+                <a
+                  href={`/blog/tags/${slugifyTag(tag)}/`}
+                  data-analytics-event="blog_tag_click"
+                  data-analytics-category="blog"
+                  data-analytics-label={slugifyTag(tag)}
+                  data-analytics-location="blog_page_post_grid"
+                >
+                  {tag}
+                </a>
               </>
             ))}
           </p>
@@ -105,7 +161,15 @@ const archive = getArchiveSummary(posts);
                 {target === pageNumber ? (
                   <span aria-current="page">{target}</span>
                 ) : (
-                  <a href={href}>{target}</a>
+                  <a
+                    href={href}
+                    data-analytics-event="blog_pagination_click"
+                    data-analytics-category="blog"
+                    data-analytics-label={`page_${target}`}
+                    data-analytics-location="blog_page_pagination"
+                  >
+                    {target}
+                  </a>
                 )}
               </li>
             );

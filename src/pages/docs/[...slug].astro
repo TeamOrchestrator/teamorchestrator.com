@@ -24,7 +24,12 @@ const allDocs = await getSortedDocs();
 const sections = getDocsSections(allDocs);
 ---
 
-<Layout title={`${doc.data.title} | Team Orchestrator Docs`} description={doc.data.description}>
+<Layout
+  title={`${doc.data.title} | Team Orchestrator Docs`}
+  description={doc.data.description}
+  ogType="article"
+  twitterCard="summary"
+>
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">Documentation</p>
@@ -46,6 +51,10 @@ const sections = getDocsSections(allDocs);
                   <a
                     class={sectionDoc.slug === doc.slug ? 'active' : undefined}
                     href={`/docs/${sectionDoc.slug}/`}
+                    data-analytics-event="docs_navigation_click"
+                    data-analytics-category="docs"
+                    data-analytics-label={sectionDoc.slug}
+                    data-analytics-location="docs_sidebar"
                   >
                     {sectionDoc.data.title}
                   </a>
@@ -60,7 +69,14 @@ const sections = getDocsSections(allDocs);
             <ul>
               {pageHeadings.map((heading) => (
                 <li>
-                  <a class={`toc-link depth-${heading.depth}`} href={`#${heading.slug}`}>
+                  <a
+                    class={`toc-link depth-${heading.depth}`}
+                    href={`#${heading.slug}`}
+                    data-analytics-event="docs_toc_click"
+                    data-analytics-category="docs"
+                    data-analytics-label={heading.slug}
+                    data-analytics-location="docs_toc"
+                  >
                     {heading.text}
                   </a>
                 </li>

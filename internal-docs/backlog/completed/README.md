@@ -4,6 +4,9 @@ Finished work items.
 
 ## 2026-02-19
 
+- `03.04-add-deployment-smoke-checks-and-broken-link-monitoring.md`
+- `03.02-add-website-analytics-event-model.md`
+- `03.01-add-seo-and-social-metadata-baseline.md`
 - `03.03-fix-terminal-layout-shift.md`
 - `02.04-implement-projectathena-docs-sync-script-and-guardrails.md`
 - `02.03-establish-docs-ingestion-manifest-and-ownership-map.md`

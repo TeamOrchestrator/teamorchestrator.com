@@ -105,7 +105,7 @@
   }
 
   .hero-grid {
-    @apply grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)];
+    @apply grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_auto];
   }
 
   .eyebrow {
@@ -145,7 +145,8 @@
   }
 
   .terminal-shell {
-    @apply flex min-w-0 flex-col gap-3 lg:h-[380px];
+    @apply flex min-w-0 w-full flex-col gap-3 lg:h-[380px] lg:justify-self-end;
+    inline-size: min(100%, calc((var(--terminal-max-ch, 88) * 0.7rem) + 2.4rem));
   }
 
   .terminal-header {

@@ -8,6 +8,8 @@ import Terminal from '../components/Terminal.astro';
 <Layout
 	title="Team Orchestrator | Mission Control for Your Digital Workforce"
 	description="Secure, auditable control plane for managing teams of AI agents with Athena as your strategic collaborator."
+	ogType="website"
+	twitterCard="summary"
 >
 	<section class="hero section-tight">
 		<div class="container hero-grid">
@@ -19,8 +21,26 @@ import Terminal from '../components/Terminal.astro';
 					auditable control plane to run specialist AI teams with Athena as the strategic orchestrator.
 				</p>
 				<div class="cta-row">
-					<Button variant="primary" href="mailto:hello@teamorchestrator.com">Request Early Access</Button>
-					<Button variant="secondary" href="/docs">Explore Docs</Button>
+					<Button
+						variant="primary"
+						href="mailto:hello@teamorchestrator.com"
+						analyticsEvent="cta_click"
+						analyticsCategory="cta"
+						analyticsLabel="request_early_access"
+						analyticsLocation="home_hero"
+					>
+						Request Early Access
+					</Button>
+					<Button
+						variant="secondary"
+						href="/docs"
+						analyticsEvent="docs_navigation_click"
+						analyticsCategory="docs"
+						analyticsLabel="explore_docs"
+						analyticsLocation="home_hero"
+					>
+						Explore Docs
+					</Button>
 				</div>
 			</div>
 			<Terminal />

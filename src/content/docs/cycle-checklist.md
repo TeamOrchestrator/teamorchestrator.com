@@ -13,6 +13,7 @@ Use this checklist before every handoff.
 - [ ] Story scope is complete and acceptance criteria are met.
 - [ ] Lifecycle state for changed docs/blog content is explicit.
 - [ ] Build passes with `npm run build`.
+- [ ] Static smoke checks pass with `npm run check:static` (or `npm run validate:deploy`).
 - [ ] Existing URLs remain stable.
 - [ ] Handoff snapshot updated in `internal-docs/archive/handoff.md`.
 - [ ] Completed stories moved from `internal-docs/backlog/active/` to `internal-docs/backlog/completed/`.

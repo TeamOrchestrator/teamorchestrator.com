@@ -5,14 +5,12 @@ This sprint now shifts from docs productization to discoverability and growth in
 ## Sprint Sequence
 
 ### Phase 1: Publishing & Growth Infrastructure
-1. **Story 03.01: Add SEO and Social Metadata Baseline**
-2. **Story 03.02: Add Website Analytics Event Model**
+1. **Story 03.05: Define Content Backup and Rollback Process**
 
 ## Strategic Risks
 
-- SEO metadata gaps can reduce discoverability and share-preview quality on core launch pages.
-- Analytics event sprawl can degrade data quality if taxonomy boundaries are not explicit.
-- Tracking should remain privacy-conscious and optional to avoid coupling core site rendering to vendor scripts.
+- Rollback procedures can become stale if they are not exercised against current build/deploy workflows.
+- Recovery guidance must avoid destructive git usage patterns that could affect unrelated in-flight work.
 
 ## Iteration Exit Checklist
 

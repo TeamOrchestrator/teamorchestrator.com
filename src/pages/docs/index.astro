@@ -7,18 +7,48 @@ const docs = await getSortedDocs();
 const sections = getDocsSections(docs);
 ---
 
-<Layout title="Team Orchestrator Docs" description="Documentation for Team Orchestrator.">
+<Layout
+  title="Team Orchestrator Docs"
+  description="Documentation for Team Orchestrator."
+  ogType="website"
+  twitterCard="summary"
+>
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">Documentation</p>
       <h1>Docs and guides</h1>
       <p class="lead">Technical reference and onboarding material for Team Orchestrator.</p>
       <p class="meta">
-        Canonical operations: <a href="/docs/docs-operations-workflow/">Docs operations workflow</a>
+        Canonical operations:{' '}
+        <a
+          href="/docs/docs-operations-workflow/"
+          data-analytics-event="docs_navigation_click"
+          data-analytics-category="docs"
+          data-analytics-label="docs_operations_workflow"
+          data-analytics-location="docs_index_quick_links"
+        >
+          Docs operations workflow
+        </a>
         {' · '}
-        <a href="/docs/cycle-checklist/">Cycle checklist</a>
+        <a
+          href="/docs/cycle-checklist/"
+          data-analytics-event="docs_navigation_click"
+          data-analytics-category="docs"
+          data-analytics-label="cycle_checklist"
+          data-analytics-location="docs_index_quick_links"
+        >
+          Cycle checklist
+        </a>
         {' · '}
-        <a href="/docs/content-templates-and-qa/">Content templates and QA</a>
+        <a
+          href="/docs/content-templates-and-qa/"
+          data-analytics-event="docs_navigation_click"
+          data-analytics-category="docs"
+          data-analytics-label="content_templates_and_qa"
+          data-analytics-location="docs_index_quick_links"
+        >
+          Content templates and QA
+        </a>
       </p>
     </div>
   </section>
@@ -31,7 +61,17 @@ const sections = getDocsSections(docs);
           <div class="docs-grid">
             {section.docs.map((doc) => (
               <Card>
-                <h3><a href={`/docs/${doc.slug}/`}>{doc.data.title}</a></h3>
+                <h3>
+                  <a
+                    href={`/docs/${doc.slug}/`}
+                    data-analytics-event="docs_navigation_click"
+                    data-analytics-category="docs"
+                    data-analytics-label={doc.slug}
+                    data-analytics-location="docs_index_section_grid"
+                  >
+                    {doc.data.title}
+                  </a>
+                </h3>
                 <p>{doc.data.description}</p>
               </Card>
             ))}

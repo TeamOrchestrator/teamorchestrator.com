@@ -1,3 +1,95 @@
+# Handoff Snapshot (2026-02-19, Story 03.04 Complete)
+
+## Current State
+
+- Story `03.04` is complete; deterministic deployment smoke checks and broken internal-link monitoring are now available for static output.
+- A repeatable validation command now combines build + smoke checks for local and CI workflows.
+
+## What Changed In This Slice
+
+1. Added static smoke checker script: `scripts/smoke-check-static-output.mjs`.
+2. Added npm commands in `package.json`:
+   - `npm run check:static`
+   - `npm run validate:deploy` (`build` + smoke check)
+3. Defined and documented smoke-check contract and CI usage in:
+   - `internal-docs/developer/deployment-smoke-checks.md`
+4. Linked the new guide in `internal-docs/developer/README.md`.
+5. Updated checklist references to include static smoke checks:
+   - `internal-docs/developer/cycle-checklist.md`
+   - `src/content/docs/cycle-checklist.md`
+6. Validated end-to-end via `npm run validate:deploy` (pass).
+7. Completed backlog movement for Story `03.04`.
+
+## Risks
+
+- Required-route contract is intentionally small; future critical routes should be added deliberately to avoid blind spots.
+- Build still reports an existing duplicate content-id warning for `cycle-checklist` (pre-existing issue), which is unrelated to smoke-check implementation but should be addressed in a future cleanup slice.
+
+## Follow-Ups / Next Slice
+
+- Execute Story `03.05` from `internal-docs/backlog/active/03.05-define-content-backup-and-rollback-process.md`.
+
+# Handoff Snapshot (2026-02-19, Story 03.02 Complete)
+
+## Current State
+
+- Story `03.02` is complete; a baseline analytics event model is now documented and instrumented across CTA, docs navigation, blog engagement, and primary nav interactions.
+- Instrumentation remains optional and vendor-agnostic, preserving static-rendering reliability.
+
+## What Changed In This Slice
+
+1. Added reusable analytics props to `Button.astro` for consistent CTA instrumentation.
+2. Added delegated click-tracking runtime in `src/layouts/Layout.astro` that emits analytics payloads to:
+   - `team-orchestrator:analytics` custom window event,
+   - optional `window.dataLayer`,
+   - optional `window.teamOrchestratorAnalytics.track(payload)` adapter.
+3. Added explicit `data-analytics-*` instrumentation markers across key surfaces:
+   - Header navigation and contact CTA.
+   - Homepage hero CTAs.
+   - Blog index/post/pagination/tag/archive routes.
+   - Docs index quick links, docs index cards, docs sidebar, and docs TOC links.
+4. Added versioned analytics contract doc: `internal-docs/developer/analytics-event-model.md`.
+5. Linked analytics doc from `internal-docs/developer/README.md`.
+6. Validated with `npm run build` (pass) and confirmed route output stability.
+7. Completed backlog movement for Story `03.02`.
+
+## Risks
+
+- Baseline is click-oriented only; impression/scroll/depth events are intentionally out of scope and may be needed later for richer funnel analysis.
+- Downstream analytics consumers must treat `eventVersion: 1` as the schema contract and update parsers if fields evolve.
+
+## Follow-Ups / Next Slice
+
+- Execute Story `03.04` from `internal-docs/backlog/active/03.04-add-deployment-smoke-checks-and-broken-link-monitoring.md`.
+
+# Handoff Snapshot (2026-02-19, Story 03.01 Complete)
+
+## Current State
+
+- Story `03.01` is complete; canonical, Open Graph, and Twitter metadata baselines are now emitted on core routes.
+- Route-level page titles/descriptions remain intact while shared layout metadata defaults now ensure consistent SEO/social output.
+
+## What Changed In This Slice
+
+1. Added canonical metadata defaults and social metadata primitives in shared layout: `src/layouts/Layout.astro`.
+2. Configured production site URL for canonical/absolute metadata generation in `astro.config.mjs`.
+3. Applied explicit metadata intent on required routes:
+   - Home: `src/pages/index.astro`
+   - Blog index and post routes: `src/pages/blog/index.astro`, `src/pages/blog/[...slug].astro`
+   - Docs index and doc routes: `src/pages/docs/index.astro`, `src/pages/docs/[...slug].astro`
+4. Documented SEO/social metadata conventions for future additions in `src/content/docs/content-templates-and-qa.md`.
+5. Validated with `npm run build` (pass) and verified emitted canonical/OG/Twitter tags in built core-route HTML outputs.
+6. Completed backlog movement for Story `03.01`.
+
+## Risks
+
+- Social previews currently rely on text-only metadata (`summary` card) and do not yet define route-specific social images.
+- `astro.config.mjs` now sets a production `site` URL; future deploy-domain changes must update this value to keep canonical URLs accurate.
+
+## Follow-Ups / Next Slice
+
+- Execute Story `03.02` from `internal-docs/backlog/active/03.02-add-website-analytics-event-model.md`.
+
 # Handoff Snapshot (2026-02-19, Story 03.03 Complete)
 
 ## Current State

@@ -6,5 +6,4 @@ Source of truth for work items lives in `internal-docs/backlog/`:
 - Roadmap: `internal-docs/backlog/roadmap/roadmap.md`
 
 Current focus (Website Foundation Cycle):
-- Story `03.01`: add SEO and social metadata baseline.
-- Story `03.03`: fix terminal layout shift.
+- Story `03.05`: define content backup and rollback process.
