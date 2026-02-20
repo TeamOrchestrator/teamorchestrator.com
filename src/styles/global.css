@@ -113,6 +113,7 @@
   }
 
   .hero-grid.hero-grid-stacked .terminal-shell {
+    justify-self: stretch;
     margin-top: 0.5rem;
   }
 
