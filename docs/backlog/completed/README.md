@@ -4,6 +4,9 @@ Finished work items.
 
 ## 2026-02-19
 
+- `02.04-implement-projectathena-docs-sync-script-and-guardrails.md`
+- `02.03-establish-docs-ingestion-manifest-and-ownership-map.md`
+- `02.02-implement-docs-search-index-output.md`
 - `01.05-create-interactive-terminal-demo-for-homepage.md`
 - `01.04-implement-mission-control-design-system-and-layout-components.md`
 - `01.03-adopt-tailwind-css-for-design-consistency.md`

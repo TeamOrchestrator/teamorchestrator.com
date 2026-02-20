@@ -1,0 +1,91 @@
+{
+  "manifestVersion": 1,
+  "sourceRepository": "projectathena/docs",
+  "slugLockPolicy": {
+    "publishedSlugImmutable": true,
+    "renameHandling": "Keep existing destinationSlug. Update sourcePath only and retain old route.",
+    "removedSourceHandling": "Retain generated page for one deprecation cycle, then archive with replacement link when available."
+  },
+  "entries": [
+    {
+      "id": "athena-runtime-control-plane-overview",
+      "domain": "runtime-control-plane",
+      "sourcePath": "platform/runtime/control-plane-overview.md",
+      "destinationSlug": "reference/athena-control-plane-overview",
+      "owner": {
+        "team": "Athena Runtime",
+        "reviewers": [
+          "@athena-runtime",
+          "@website-docs"
+        ]
+      },
+      "lifecycleState": "in_review",
+      "slugLocked": true,
+      "notes": "Core runtime contract overview intended for public reference."
+    },
+    {
+      "id": "athena-agent-orchestration-lifecycle",
+      "domain": "runtime-control-plane",
+      "sourcePath": "platform/runtime/agent-orchestration-lifecycle.md",
+      "destinationSlug": "reference/athena-agent-orchestration-lifecycle",
+      "owner": {
+        "team": "Athena Runtime",
+        "reviewers": [
+          "@athena-runtime",
+          "@website-docs"
+        ]
+      },
+      "lifecycleState": "in_review",
+      "slugLocked": true,
+      "notes": "Maps mission relay and context compounding behavior."
+    },
+    {
+      "id": "athena-identity-and-authn",
+      "domain": "security-and-identity",
+      "sourcePath": "platform/security/identity-and-authn.md",
+      "destinationSlug": "reference/athena-identity-and-authn",
+      "owner": {
+        "team": "Athena Security",
+        "reviewers": [
+          "@athena-security",
+          "@website-docs"
+        ]
+      },
+      "lifecycleState": "draft",
+      "slugLocked": true,
+      "notes": "Public-safe identity surface and trust model."
+    },
+    {
+      "id": "athena-observability-and-audit-events",
+      "domain": "observability",
+      "sourcePath": "platform/observability/audit-events.md",
+      "destinationSlug": "reference/athena-audit-events",
+      "owner": {
+        "team": "Athena Platform",
+        "reviewers": [
+          "@athena-platform",
+          "@website-docs"
+        ]
+      },
+      "lifecycleState": "draft",
+      "slugLocked": true,
+      "notes": "Event model baseline for auditability and trace reporting."
+    },
+    {
+      "id": "athena-api-mission-run-endpoint",
+      "domain": "api-reference",
+      "sourcePath": "api/mission-run-endpoint.md",
+      "destinationSlug": "reference/athena-mission-run-endpoint",
+      "owner": {
+        "team": "Athena API",
+        "reviewers": [
+          "@athena-api",
+          "@website-docs"
+        ]
+      },
+      "lifecycleState": "in_review",
+      "slugLocked": true,
+      "notes": "Customer-facing endpoint behavior and payload contract."
+    }
+  ]
+}

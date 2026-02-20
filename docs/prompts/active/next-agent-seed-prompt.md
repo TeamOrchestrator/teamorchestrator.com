@@ -11,18 +11,20 @@ You are beginning a new development cycle in TeamOrchestrator.com.
 
 ## Current Context
 
-Stories 01.03, 01.04, and 01.05 are complete: Tailwind is integrated, Mission Control design components are in place, and the homepage now includes an interactive terminal mission demo. The next cycle should shift back to documentation productization by generating machine-consumable search artifacts.
+Stories 01.03, 01.04, 01.05, 02.02, and 02.03 are complete: Mission Control UI baseline is in place, search index output is generated at build time, and an Athena ingestion manifest contract (schema + ownership map + slug-lock policy) now exists in `docs/architecture/`. The next cycle should implement deterministic sync automation and guardrails.
 
-## Task: Story 02.02 — Implement Docs Search Index Output
+## Task: Story 02.04 — Implement ProjectAthena Docs Sync Script and Guardrails
 
-Produce a deterministic, search-ready docs index artifact during build.
+Implement deterministic synchronization from `projectathena/docs` using the manifest contract.
 
-1. Define JSON schema for docs search index entries (title, description, headings, route path).
-2. Generate the artifact as part of build output.
-3. Ensure generation is deterministic and does not break static build behavior.
-4. Document the schema and downstream consumption expectations for future search UI work.
+1. Build a sync script that reads `docs/architecture/projectathena-docs-ingestion-manifest.json`.
+2. Generate/update website docs content deterministically from mapped source files.
+3. Attach source trace metadata (`sourceCommit`, `lastSyncedAt`) to generated output.
+4. Add guardrails preventing manual edits to generated docs.
+5. Add validation checks for missing source files and slug collisions.
+6. Keep build green and behavior deterministic.
 
-**Reference:** `docs/backlog/active/02.02-implement-docs-search-index-output.md`
+**Reference:** `docs/backlog/active/02.04-implement-projectathena-docs-sync-script-and-guardrails.md`
 
 ## Constraints
 

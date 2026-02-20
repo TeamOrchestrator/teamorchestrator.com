@@ -1,23 +1,18 @@
 # Active Backlog Sprint Plan (2026-02-19)
 
-This sprint now pivots from design-system implementation back to documentation productization.
+This sprint now shifts from docs productization to discoverability and growth instrumentation.
 
 ## Sprint Sequence
 
-### Phase 1: Documentation Productization
-1. **Story 02.02: Implement Docs Search Index Output**
-2. **Story 02.03: Establish Docs Ingestion Manifest and Ownership Map**
-3. **Story 02.04: Implement ProjectAthena Docs Sync Script and Guardrails**
-
-### Phase 2: Publishing & Growth Infrastructure
-4. **Story 03.01: Add SEO and Social Metadata Baseline**
-5. **Story 03.02: Add Website Analytics Event Model**
+### Phase 1: Publishing & Growth Infrastructure
+1. **Story 03.01: Add SEO and Social Metadata Baseline**
+2. **Story 03.02: Add Website Analytics Event Model**
 
 ## Strategic Risks
 
-- Search index shape decisions in Story `02.02` can constrain future docs search UI and ranking capabilities.
-- Docs ingestion ownership drift remains a risk until manifest/sync stories are implemented.
-- Build artifact determinism for generated docs metadata must be maintained to avoid CI noise.
+- SEO metadata gaps can reduce discoverability and share-preview quality on core launch pages.
+- Analytics event sprawl can degrade data quality if taxonomy boundaries are not explicit.
+- Tracking should remain privacy-conscious and optional to avoid coupling core site rendering to vendor scripts.
 
 ## Iteration Exit Checklist
 

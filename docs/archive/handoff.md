@@ -1,3 +1,55 @@
+# Handoff Snapshot (2026-02-19, Story 02.03 Complete)
+
+## Current State
+
+- Story `02.03` is complete with a version-controlled ingestion manifest, explicit schema, and ownership/slug-lock policy for Athena docs mapping.
+- Documentation productization is now ready for Story `02.04` sync-script implementation.
+
+## What Changed In This Slice
+
+1. Added manifest schema: `docs/architecture/projectathena-docs-ingestion-manifest.schema.json`.
+2. Added seeded ingestion manifest: `docs/architecture/projectathena-docs-ingestion-manifest.json`.
+3. Added ownership map and slug-lock policy: `docs/architecture/projectathena-docs-ingestion-ownership-map.md`.
+4. Updated architecture index to surface new ingestion-contract artifacts: `docs/architecture/README.md`.
+5. Validated repository build via `npm run build` (pass).
+6. Completed backlog movement for Story `02.03`.
+
+## Risks
+
+- Seed mappings currently represent curated contract intent; Story `02.04` must enforce validation against real source paths.
+- Reviewer handles are policy placeholders and should be aligned to real team identities during implementation rollout.
+
+## Follow-Ups / Next Slice
+
+- Execute Story `02.04` from `docs/backlog/active/02.04-implement-projectathena-docs-sync-script-and-guardrails.md`.
+
+# Handoff Snapshot (2026-02-19, Story 02.02 Complete)
+
+## Current State
+
+- Website stack: Astro + Tailwind with completed Mission Control UI baseline.
+- Story `02.02` is complete with deterministic docs search index generation now part of static build output.
+- Search artifact is available at `/docs/search-index.json`.
+
+## What Changed In This Slice
+
+1. Added search index builder logic in `src/lib/docs-search-index.ts`.
+2. Implemented static JSON route at `src/pages/docs/search-index.json.ts` (`prerender = true`) to emit the build artifact.
+3. Indexed metadata includes title, description, route path, section ordering metadata, and heading metadata (depth 2-3).
+4. Added schema and downstream consumption contract docs in `docs/developer/docs-search-index-schema.md`.
+5. Linked new schema reference from `docs/developer/README.md`.
+6. Validated via `npm run build` and confirmed emitted file `dist/docs/search-index.json`.
+7. Completed backlog movement for Story `02.02`.
+
+## Risks
+
+- Schema is intentionally minimal (`schemaVersion: 1`); future ranking features may require explicit backward-compatible schema evolution.
+- Heading extraction relies on rendered markdown structure; major markdown parser changes may alter heading slug/text output.
+
+## Follow-Ups / Next Slice
+
+- Execute Story `02.03` from `docs/backlog/active/02.03-establish-docs-ingestion-manifest-and-ownership-map.md`.
+
 # Handoff Snapshot (2026-02-19, Story 01.05 Complete)
 
 ## Current State
