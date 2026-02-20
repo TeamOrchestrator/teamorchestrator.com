@@ -1,3 +1,40 @@
+# Handoff Snapshot (2026-02-19, Story 02.04 Complete)
+
+## Current State
+
+- Story `02.04` is complete with deterministic manifest-driven docs sync and generation guardrails.
+- Curated Athena reference docs now generate into `src/content/docs/reference/` via a repeatable script flow.
+- Build remains stable after generated-doc updates.
+
+## What Changed In This Slice
+
+1. Added sync script: `scripts/sync-projectathena-docs.mjs`.
+2. Added npm command: `npm run sync:projectathena-docs`.
+3. Implemented fail-fast validations in sync workflow for:
+   - missing source files,
+   - slug collisions,
+   - incomplete owner metadata,
+   - non-locked slugs.
+4. Implemented generated-doc guardrails:
+   - managed file marker (`GENERATED FILE: DO NOT EDIT`),
+   - refusal to overwrite non-managed files.
+5. Added deterministic source trace metadata in generated frontmatter:
+   - `sourcePath`, `sourceCommit`, `lastSyncedAt`, `generatedBy`, `generatedFromManifestId`.
+6. Added sync runbook: `docs/developer/projectathena-docs-sync.md`.
+7. Added local fixture source docs under `docs/fixtures/projectathena/docs/` for repeatable local validation.
+8. Ran sync and confirmed generated outputs in `src/content/docs/reference/*.md`.
+9. Validated with `npm run build` (pass) after generation.
+10. Completed backlog movement for Story `02.04`.
+
+## Risks
+
+- Fixture-backed local validation confirms script behavior, but production usage still depends on real `projectathena/docs` path availability and content shape.
+- Generated docs currently rely on simple frontmatter parsing; upstream format changes (complex YAML) may require parser hardening.
+
+## Follow-Ups / Next Slice
+
+- Execute Story `03.01` from `docs/backlog/active/03.01-add-seo-and-social-metadata-baseline.md`.
+
 # Handoff Snapshot (2026-02-19, Story 02.03 Complete)
 
 ## Current State

@@ -11,20 +11,19 @@ You are beginning a new development cycle in TeamOrchestrator.com.
 
 ## Current Context
 
-Stories 01.03, 01.04, 01.05, 02.02, and 02.03 are complete: Mission Control UI baseline is in place, search index output is generated at build time, and an Athena ingestion manifest contract (schema + ownership map + slug-lock policy) now exists in `docs/architecture/`. The next cycle should implement deterministic sync automation and guardrails.
+Stories 01.03, 01.04, 01.05, 02.02, 02.03, and 02.04 are complete: Mission Control UI baseline is in place, docs search index output is generated, and manifest-driven docs sync with guardrails now exists. The next cycle should focus on discoverability by establishing SEO/social metadata baselines.
 
-## Task: Story 02.04 — Implement ProjectAthena Docs Sync Script and Guardrails
+## Task: Story 03.01 — Add SEO and Social Metadata Baseline
 
-Implement deterministic synchronization from `projectathena/docs` using the manifest contract.
+Establish foundational SEO and social metadata across core website routes.
 
-1. Build a sync script that reads `docs/architecture/projectathena-docs-ingestion-manifest.json`.
-2. Generate/update website docs content deterministically from mapped source files.
-3. Attach source trace metadata (`sourceCommit`, `lastSyncedAt`) to generated output.
-4. Add guardrails preventing manual edits to generated docs.
-5. Add validation checks for missing source files and slug collisions.
-6. Keep build green and behavior deterministic.
+1. Add canonical metadata defaults in shared layout.
+2. Add Open Graph and Twitter card metadata for Home, Blog index/post, and Docs index/doc routes.
+3. Keep route-specific title/description metadata intact.
+4. Document metadata conventions for future content additions.
+5. Validate static output and ensure no URL/path regressions.
 
-**Reference:** `docs/backlog/active/02.04-implement-projectathena-docs-sync-script-and-guardrails.md`
+**Reference:** `docs/backlog/active/03.01-add-seo-and-social-metadata-baseline.md`
 
 ## Constraints
 
