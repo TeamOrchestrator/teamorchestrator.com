@@ -1,28 +1,32 @@
 ---
 title: Getting Started
-description: Quick orientation to Team Orchestrator concepts and operating model.
+description: Orientation to the Team Orchestrator command model and operating philosophy.
 section: Foundation
 sectionOrder: 1
 order: 1
 ---
 
-## Core model
+## The Command Chain
 
-Team Orchestrator uses a tiered command structure:
+Team Orchestrator does not just "run agents"—it governs them. Our architecture is built on a tiered command structure designed for absolute situational awareness:
 
-1. **Flight Director** (human) sets mission intent.
-2. **Athena** translates intent into mission plans.
-3. **Specialists** execute scoped tasks.
+1. **Flight Director** (The Human): Sets mission intent, validates flight plans, and holds the final override key.
+2. **Athena** (The Orchestrator): Translates strategic intent into mission paths and manages the lifecycle of specialists.
+3. **Specialists** (The Agents): Execute scoped, deterministic tasks within governed sandboxes.
 
-## Operating flow
+## Operating Philosophy
 
-1. Submit objective.
-2. Review Athena's flight plan proposal.
-3. Approve, modify, or reject.
-4. Review mission briefing and evidence bundle.
+We believe in **Managed Autonomy**. This means shifting away from "black-box" autopilot systems toward a model where every action is observable, auditable, and steerable.
 
-## Interface standards
+1. **Submit Objective:** Launch a mission by defining a clear business requirement.
+2. **Review Flight Plan:** Athena proposes a sequence of specialists and a context-compounding strategy.
+3. **Validate & Launch:** Approve the plan. Athena briefs the units and initiates execution.
+4. **Mission Briefing:** Receive the final evidence bundle and strategic summary for verification.
 
-- CLI: `athena run`
-- State directory: `.athena/`
-- Identity header: `X-Athena-Identity`
+## Interface Standards
+
+Access the command surface through our native instrumentation:
+
+- **CLI:** `athena run` — The primary mission deployment interface.
+- **State Directory:** `.athena/` — Local mission context and telemetry storage.
+- **Identity Header:** `X-Athena-Identity` — The security boundary for cross-agent trust.

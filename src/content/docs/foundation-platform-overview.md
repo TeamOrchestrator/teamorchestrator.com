@@ -1,6 +1,6 @@
 ---
 title: Platform Overview
-description: Product positioning, reliability model, and current development stage.
+description: Positioning, governance model, and current development trajectory.
 slug: platform-overview
 section: Foundation
 sectionOrder: 1
@@ -9,14 +9,14 @@ order: 2
 
 ## Positioning
 
-Team Orchestrator is a **control plane for AI teams** that turns experimental prompting into reliable operational workflows.
+Team Orchestrator is the **governance layer for the autonomous era**. We transform fragile AI prompting into mission-critical, deterministic workflows.
 
-## Why teams choose it
+## The Managed Autonomy Advantage
 
-- Collaborative intelligence with human override.
-- Context compounding across specialist handoffs.
-- Industrial reliability with auditability and policy controls.
+- **The Flight Director Model:** Human-in-the-loop strategy with machine-in-the-loop execution.
+- **Context Compounding:** Proprietary intelligence relay that eliminates agentic drift.
+- **Industrial Reliability:** Built-in auditability, policy-aware execution, and full-stack observability.
 
-## Current status
+## Current Trajectory
 
-Team Orchestrator is currently in **Stage 8 (in progress)** with focus on control-plane/API contract integrity and lock-guarded state changes.
+Team Orchestrator is currently in **Stage 8 (in progress)**. Our focus is on perfecting the control-plane API contracts and ensuring mission state changes are handled with absolute atomic integrity.
