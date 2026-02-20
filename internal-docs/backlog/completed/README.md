@@ -4,6 +4,7 @@ Finished work items.
 
 ## 2026-02-19
 
+- `03.03-fix-terminal-layout-shift.md`
 - `02.04-implement-projectathena-docs-sync-script-and-guardrails.md`
 - `02.03-establish-docs-ingestion-manifest-and-ownership-map.md`
 - `02.02-implement-docs-search-index-output.md`

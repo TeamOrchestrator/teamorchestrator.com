@@ -1,3 +1,28 @@
+# Handoff Snapshot (2026-02-19, Story 03.03 Complete)
+
+## Current State
+
+- Story `03.03` is complete; terminal typing no longer causes adjacent hero-content reflow/layout shift.
+- Hero layout remains stable while terminal output is rendered.
+
+## What Changed In This Slice
+
+1. Updated hero grid track sizing to prevent min-content growth from terminal text affecting adjacent column widths.
+2. Constrained terminal shell/viewport sizing for stable dimensions during typing animation.
+3. Enabled stable terminal scrolling behavior (`overflow-y-scroll`, `scrollbar-gutter: stable`, `white-space: pre`) to avoid width/height jitter.
+4. Added mobile-specific terminal height behavior so responsiveness remains intact.
+5. Validated with `npm run build` (pass).
+6. Completed backlog movement for Story `03.03`.
+
+## Risks
+
+- Long unbroken lines are now intentionally scrollable rather than wrapping; future content changes should preserve this behavior.
+- Duplicate content-ID warnings in docs build remain an existing issue unrelated to this story.
+
+## Follow-Ups / Next Slice
+
+- Execute Story `03.01` from `internal-docs/backlog/active/03.01-add-seo-and-social-metadata-baseline.md`.
+
 # Handoff Snapshot (2026-02-19, Story 02.04 Complete)
 
 ## Current State
