@@ -1,5 +1,5 @@
 ---
-title: Command the Autonomous Era: Introducing Team Orchestrator
+title: "Command the Autonomous Era: Introducing Team Orchestrator"
 description: Why we are building the mission-critical governance layer for AI-native engineering teams.
 pubDate: 2026-02-19
 author: Team Orchestrator

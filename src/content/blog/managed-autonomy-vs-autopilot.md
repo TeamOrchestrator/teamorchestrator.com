@@ -1,5 +1,5 @@
 ---
-title: Governance vs. Hope: Managed Autonomy in AI Execution
+title: "Governance vs. Hope: Managed Autonomy in AI Execution"
 description: Why control-plane thinking is the only way to scale AI agent teams.
 pubDate: 2026-02-19
 author: Team Orchestrator
