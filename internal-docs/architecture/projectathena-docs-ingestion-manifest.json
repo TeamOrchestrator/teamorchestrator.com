@@ -10,7 +10,7 @@
     {
       "id": "athena-runtime-agent-orchestration-lifecycle",
       "domain": "runtime-control-plane",
-      "sourcePath": "platform/runtime/agent-orchestration-lifecycle.md",
+      "sourcePath": "user/01-introduction.md",
       "destinationSlug": "reference/athena-agent-orchestration-lifecycle",
       "owner": {
         "team": "Athena Runtime",
@@ -26,7 +26,7 @@
     {
       "id": "athena-runtime-control-plane-overview",
       "domain": "runtime-control-plane",
-      "sourcePath": "platform/runtime/control-plane-overview.md",
+      "sourcePath": "user/01-introduction.md",
       "destinationSlug": "reference/athena-control-plane-overview",
       "owner": {
         "team": "Athena Runtime",
@@ -42,7 +42,7 @@
     {
       "id": "athena-security-identity-and-authn",
       "domain": "security-and-identity",
-      "sourcePath": "platform/security/identity-and-authn.md",
+      "sourcePath": "user/04-api-server.md",
       "destinationSlug": "reference/athena-identity-and-authn",
       "owner": {
         "team": "Athena Security",
@@ -58,7 +58,7 @@
     {
       "id": "athena-observability-audit-events",
       "domain": "observability",
-      "sourcePath": "platform/observability/audit-events.md",
+      "sourcePath": "user/04-api-server.md",
       "destinationSlug": "reference/athena-audit-events",
       "owner": {
         "team": "Athena Platform",
@@ -74,8 +74,8 @@
     {
       "id": "athena-api-mission-run-endpoint",
       "domain": "api-reference",
-      "sourcePath": "api/mission-run-endpoint.md",
-      "destinationSlug": "reference/athena-mission-run-endpoint",
+      "sourcePath": "user/04-api-server.md",
+      "destinationSlug": "reference/athena-api-mission-run-endpoint",
       "owner": {
         "team": "Athena API",
         "reviewers": [

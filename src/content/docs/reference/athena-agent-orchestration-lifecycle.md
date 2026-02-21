@@ -1,33 +1,35 @@
 ---
-title: "Agent Orchestration Lifecycle"
-description: "Lifecycle model for assignment, relay, and completion."
+title: "Introduction to Project Athena"
+description: "Introduction to Project Athena reference documentation."
 audience: "public"
 section: "Reference"
 sectionOrder: 3
 order: 1
-sourcePath: "platform/runtime/agent-orchestration-lifecycle.md"
+sourcePath: "user/01-introduction.md"
 sourceCommit: "unknown"
-lastSyncedAt: "2026-02-20T21:40:00.000Z"
+lastSyncedAt: "2026-02-21T01:38:21.000Z"
 generatedBy: "scripts/sync-projectathena-docs.mjs"
 generatedFromManifestId: "athena-runtime-agent-orchestration-lifecycle"
 ---
 
 <!-- GENERATED FILE: DO NOT EDIT -->
 <!-- Source: projectathena/docs via internal-docs/architecture/projectathena-docs-ingestion-manifest.json -->
-<!-- Content SHA256: 3c4af965f3b2a1f6c883e7064d6a40c6fb23a4308f06fd11c663aea8f520a298 -->
+<!-- Content SHA256: 245054bd19de0b3b098a4d8a547e24e11d015997175af2a5905508f44aae4726 -->
 
-## Manifest Assembly
+# Introduction to Project Athena
 
-The lifecycle begins with the **Manifest Engine**, which translates strategic intent into a curated **Flight Manifest**. This manifest defines the specific sequence of **Specialist Designations** (e.g., Bug Scrubber, Reliability Specialist) required for the objective.
+Project Athena is a standalone, extensible agent runtime designed for developers and operators who need a robust and reliable system for orchestrating AI agent-based workflows. It provides a CLI-first interface for interacting with the runtime, with a powerful API server for more advanced use cases.
 
-## Specialist Assignment
+At its core, Project Athena is built to be a durable and observable system, re-implementing the core logic of the earlier "OpenClaw" runtime as a standalone tool.
 
-Athena allocates specialists from the **Hangar Roster** based on their high-fidelity technical capabilities. Each specialist is provisioned with a dedicated toolset and injected with the compounded seed context of the mission.
+## Core Concepts
 
-## Mission Relay
+To understand Project Athena, it's helpful to be familiar with a few core concepts:
 
-Each phase of the mission is governed by a **Relay Path**. Specialists emit traces and results that are compounded by Athena into the "Seed Context" for the next unit in the manifest.
+*   **Personas:** Personas are pre-defined configurations for the agent that bundle specific tools, context, and instructions. They allow you to easily run the agent for a specific purpose, such as code review or documentation analysis. You can run a persona using the `athena persona run` command.
 
-## Final Briefing
+*   **Providers:** Providers are adapters that connect Project Athena to different language model backends, whether they are remote APIs (like those from OpenAI or Anthropic) or local models. A provider abstraction layer allows the system to switch between providers and implement fallback policies for improved reliability.
 
-Upon completion, the mission generates a comprehensive **Evidence Bundle**, which is archived for human verification by the Flight Director.
+*   **Work Queues:** Each agent session has a dedicated work queue that manages tasks. This system ensures that work is processed sequentially, can be deferred or re-prioritized, and will resume correctly even after a crash or restart.
+
+*   **Control Plane:** The control plane is the central nervous system of Project Athena. It's a service layer that centralizes the core logic for all operations, ensuring that whether you use the CLI or the API, the behavior is consistent and reliable.

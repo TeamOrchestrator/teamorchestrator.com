@@ -4,12 +4,12 @@ description: "The Athena API Server reference documentation."
 audience: "public"
 section: "Reference"
 sectionOrder: 3
-order: 3
+order: 2
 sourcePath: "user/04-api-server.md"
 sourceCommit: "unknown"
 lastSyncedAt: "2026-02-21T01:38:21.000Z"
 generatedBy: "scripts/sync-projectathena-docs.mjs"
-generatedFromManifestId: "athena-observability-audit-events"
+generatedFromManifestId: "athena-api-mission-run-endpoint"
 ---
 
 <!-- GENERATED FILE: DO NOT EDIT -->
