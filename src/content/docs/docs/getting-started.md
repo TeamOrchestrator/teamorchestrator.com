@@ -1,9 +1,8 @@
 ---
 title: Getting Started
 description: Orientation to the Team Orchestrator command model and operating philosophy.
-section: Foundation
-sectionOrder: 1
-order: 1
+sidebar:
+  order: 1
 ---
 
 ## The Command Chain

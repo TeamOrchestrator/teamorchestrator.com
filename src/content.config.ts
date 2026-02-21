@@ -1,4 +1,6 @@
 import { defineCollection, z } from 'astro:content';
+import { docsSchema } from '@astrojs/starlight/schema';
+import { docsLoader } from '@astrojs/starlight/loaders';
 
 const blog = defineCollection({
   type: 'content',
@@ -14,14 +16,14 @@ const blog = defineCollection({
 });
 
 const docs = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    audience: z.enum(['public', 'internal']).default('public'),
-    section: z.string().default('General'),
-    sectionOrder: z.number().default(100),
-    order: z.number().default(0),
+  loader: docsLoader(),
+  schema: docsSchema({
+    extend: z.object({
+      audience: z.enum(['public', 'internal']).default('public'),
+      section: z.string().default('General'),
+      sectionOrder: z.number().default(100),
+      order: z.number().default(0),
+    }),
   }),
 });
 

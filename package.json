@@ -13,6 +13,8 @@
     "sync:projectathena-docs": "node scripts/sync-projectathena-docs.mjs"
   },
   "dependencies": {
+    "@astrojs/starlight": "^0.37.6",
+    "@astrojs/tailwind": "^6.0.2",
     "astro": "^5.17.1"
   },
   "devDependencies": {

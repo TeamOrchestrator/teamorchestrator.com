@@ -1,10 +1,8 @@
 ---
 title: Docs Operations Workflow
 description: Lifecycle, ownership, and publishing flow for Team Orchestrator docs and blog content.
-audience: internal
-section: Operations
-sectionOrder: 2
-order: 1
+sidebar:
+  order: 1
 ---
 
 ## Lifecycle states

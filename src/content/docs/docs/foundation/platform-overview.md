@@ -1,10 +1,8 @@
 ---
 title: Platform Overview
 description: Positioning, governance model, and current development trajectory.
-slug: platform-overview
-section: Foundation
-sectionOrder: 1
-order: 2
+sidebar:
+  order: 1
 ---
 
 ## Positioning

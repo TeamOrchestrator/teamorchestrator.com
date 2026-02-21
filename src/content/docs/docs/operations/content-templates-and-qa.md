@@ -1,10 +1,8 @@
 ---
 title: Content Templates and QA Checklist
 description: Standard templates, metadata conventions, and pre-publish quality checks for docs and blog content.
-audience: internal
-section: Operations
-sectionOrder: 2
-order: 3
+sidebar:
+  order: 2
 ---
 
 Use this guide when creating or updating content for the Team Orchestrator website.
@@ -17,9 +15,8 @@ Use this guide when creating or updating content for the Team Orchestrator websi
 ---
 title: Example Doc Title
 description: One-sentence summary of what this page helps the reader accomplish.
-section: Operations
-sectionOrder: 2
-order: 3
+sidebar:
+  order: 1
 ---
 ```
 
@@ -46,9 +43,11 @@ draft: true
 Required fields:
 - `title`
 - `description`
-- `section`
-- `sectionOrder`
-- `order`
+
+Optional fields:
+- `sidebar.order` (for manual sorting)
+- `sidebar.label` (if different from title)
+- `sidebar.badge` (for status/new markers)
 
 ### Blog metadata
 
