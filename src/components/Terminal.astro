@@ -1,15 +1,38 @@
 ---
 import Card from './Card.astro';
+import { proposeManifest } from '../lib/engine/manifest';
+import { createEvidenceBundle, appendTrace, archiveArtifact, finalizeBundle } from '../lib/engine/evidence';
 
+// Simulate a "Hotfix" mission using the formalized engine
+const objective = 'Fix the critical memory leak in the Auth service';
+const manifest = proposeManifest(objective);
+const bundle = createEvidenceBundle(manifest);
+
+// Simulate the mission relay path and trace events
+appendTrace(bundle, 'Interpretation', 'Strategic Architect', 'Identified Auth service as leak source.');
+appendTrace(bundle, 'Execution', 'Bug Scrubber', 'Analyzing heap dumps and proposing surgical patch.');
+archiveArtifact(bundle, 'log', '.athena/logs/heap-analysis.log', 'Heap dump analysis trace.');
+
+appendTrace(bundle, 'Verification', 'Reliability Specialist', 'Validating fix against performance benchmarks.');
+archiveArtifact(bundle, 'benchmark', '.athena/benchmarks/auth-perf.json', 'p99 latency delta: -120ms.');
+
+appendTrace(bundle, 'Final Audit', 'Security Auditor', 'Verifying patch integrity for Auth flow.');
+archiveArtifact(bundle, 'audit-log', '.athena/audit/auth-patch-signoff.json', 'Security sign-off: PASS.');
+
+finalizeBundle(bundle, true);
+
+// Generate the lines for the terminal simulation based on the manifest and bundle
 const lines = [
-  '$ athena mission launch "deploy-production-v4"',
-  '[Athena] Objective interpreted: executing governed production deployment.',
-  '[Athena] Flight Plan proposed: Security Audit -> SRE Specialist -> Lead Review.',
-  '[Relay] Context compounding initiated. Evidence package synchronized.',
-  '[Execution] Deployment successful. Performance benchmarks validated.',
-  '[Evidence] Mission bundle archived at .athena/evidence/production-v4.json',
-  '[Mission] Status: SUCCESS. Awaiting Flight Director final approval.',
+  `$ athena mission launch "${objective}"`,
+  `[Athena] Objective interpreted: executing governed mission.`,
+  `[Athena] Flight Manifest proposed: ${manifest.specialists.map((s) => s.designation).join(' -> ')}.`,
+  `[Relay] Context compounding initiated via ${manifest.relayPath.join(' -> ')}.`,
+  `[Execution] ${bundle.logicTrace[1].details}`,
+  `[Verification] ${bundle.logicTrace[2].details}`,
+  `[Evidence] Mission bundle archived at .athena/evidence/${bundle.missionId}.json`,
+  `[Mission] Status: ${bundle.status}. Awaiting Flight Director final approval.`,
 ];
+
 const maxLineLength = Math.max(...lines.map((line) => line.length));
 ---
 

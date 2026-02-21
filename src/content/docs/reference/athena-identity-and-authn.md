@@ -7,7 +7,7 @@ sectionOrder: 3
 order: 4
 sourcePath: "platform/security/identity-and-authn.md"
 sourceCommit: "unknown"
-lastSyncedAt: "2026-02-20T21:22:08.000Z"
+lastSyncedAt: "2026-02-20T21:40:00.000Z"
 generatedBy: "scripts/sync-projectathena-docs.mjs"
 generatedFromManifestId: "athena-security-identity-and-authn"
 ---

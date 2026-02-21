@@ -7,7 +7,7 @@ sectionOrder: 3
 order: 3
 sourcePath: "platform/runtime/control-plane-overview.md"
 sourceCommit: "unknown"
-lastSyncedAt: "2026-02-20T21:22:08.000Z"
+lastSyncedAt: "2026-02-20T21:40:00.000Z"
 generatedBy: "scripts/sync-projectathena-docs.mjs"
 generatedFromManifestId: "athena-runtime-control-plane-overview"
 ---

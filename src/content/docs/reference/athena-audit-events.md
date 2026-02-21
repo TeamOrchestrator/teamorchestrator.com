@@ -7,7 +7,7 @@ sectionOrder: 3
 order: 2
 sourcePath: "platform/observability/audit-events.md"
 sourceCommit: "unknown"
-lastSyncedAt: "2026-02-20T21:22:08.000Z"
+lastSyncedAt: "2026-02-20T21:40:00.000Z"
 generatedBy: "scripts/sync-projectathena-docs.mjs"
 generatedFromManifestId: "athena-observability-audit-events"
 ---

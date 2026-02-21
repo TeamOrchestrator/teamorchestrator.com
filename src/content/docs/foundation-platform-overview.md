@@ -19,4 +19,8 @@ Team Orchestrator is the **governance layer for the autonomous era**. We transfo
 
 ## Current Trajectory
 
-Team Orchestrator is currently in **Stage 8 (in progress)**. Our focus is on perfecting the control-plane API contracts and ensuring mission state changes are handled with absolute atomic integrity.
+Team Orchestrator has transitioned into **Phase 2: Tactical Specialization (Stages 9-12)**. We are shifting from "generic agents" to a **Manifest-based Assembly** model, where specialized units are curated for specific mission objectives.
+
+- **Manifest Engine:** Athena-driven assembly of specialist units (e.g., Bug Scrubber, Reliability Specialist).
+- **Core Specialist Roster:** High-fidelity technical designations with distinct toolsets and KPIs.
+- **Evidence Bundling:** Automated "flight recorders" providing full-trace auditability for every mission.
